@@ -45,6 +45,22 @@ export function Home() {
                     <a href= "https://www.linkedin.com/in/supreme-emhenya/" target="_blank" rel="noopener noreferrer"><Linkedin></Linkedin></a>
                     <a href= "mailto:emhenyasupreme@gmail.com"><Mail/></a>
                 </div>
+
+                <div>
+                    {details.map((detail,index)=>(
+                        <div key={index}>
+                            <>
+                        <div>
+                            <detail.icon/>
+                        </div>
+                        <div>
+                            <div>{detail.value}</div>
+                            <div>{detail.label}</div>
+                        </div>
+                            </>
+                        </div>
+                    ))}
+                </div>
             </div>
         </>
     );
