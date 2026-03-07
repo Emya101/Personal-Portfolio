@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"; //Helps to link between pages(web version);
-import { Github, Linkedin, Mail, Code2, Briefcase, GraduationCap, BadgeCheck } from "lucide-react"//import icons from lucide react package
+import { Github, Linkedin, Mail, Code2, Briefcase, GraduationCap, BadgeCheck, ArrowRight, MessageCircle } from "lucide-react"//import icons from lucide react package
 import styles from "./Home.module.css"
 import { motion } from "framer-motion"
+import myImage from "../assets/MyPicture.jpg"
 
 export function Home() {
     const containerAnimSettings = (stagger = 0.2) => ({
@@ -42,13 +43,13 @@ export function Home() {
                             initial="hidden"
                             animate="visible"
                         >
-                            <div className={styles.imageSide}>
+                            <motion.div variants={itemAnimSettings({y: 30, delay: 1.8 })} className={styles.imageSide}>
                                 <img
-                                    src="https://images.unsplash.com/photo-1772475385529-92037713a057?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b3Jrc3BhY2UlMjBkZXNrJTIwbWluaW1hbHxlbnwxfHx8fDE3NzI2MTAxOTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                                    src={myImage}
                                     alt="My Photo"
                                 >
                                 </img>
-                            </div>
+                            </motion.div>
 
 
                             <div className={styles.textSide}>
@@ -58,7 +59,7 @@ export function Home() {
                                 </motion.div>
 
                                 <motion.h1 variants={itemAnimSettings({ y: 30, delay: 0.4 })} className={styles.title}>
-                                    Hello, I'm <span className={`${styles.nameColor} animate-typewriter animate-duration-1000 animate-cursor`}>[Name]</span>
+                                    Hello, I'm <span className={styles.nameColor}>[Name]</span>
                                 </motion.h1>
 
                                 <motion.p variants={itemAnimSettings({ y: 30, delay: 0.6 })} className={styles.subtitle}>Software Developer</motion.p>
@@ -66,7 +67,7 @@ export function Home() {
 
 
                                 {/* Description */}
-                                <motion.p variants={itemAnimSettings({ y: 30, delay: 1.0 })}>
+                                <motion.p variants={itemAnimSettings({ y: 30, delay: 1.0 })} className={styles.description}>
 
                                     I build modern web applications and backend systems using contemporary
                                     technologies, creating scalable and user-focused digital solutions.
@@ -74,16 +75,24 @@ export function Home() {
                                 </motion.p>
 
                                 {/* Buttons */}
-                                <motion.div variants={itemAnimSettings({ y: 30, delay: 1.2 })}>
-                                    <Link to="/projects">View my work</Link>
-                                    <Link to="/contact">Get in touch</Link>
+                                <motion.div variants={itemAnimSettings({ y: 30, delay: 1.2 })} className={styles.buttonGroup}>
+                                    <Link to="/projects" className={styles.primaryButton}>
+                                        View my work
+                                        <ArrowRight className={styles.rightArrow} />
+                                    </Link>
+
+                                    <Link to="/contact" className={styles.secondaryButton}>
+                                        Get in touch
+                                        <MessageCircle className={styles.messageCircle} />
+                                    </Link>
+
                                 </motion.div>
 
                                 {/* Social Icons */}
-                                <motion.div variants={itemAnimSettings({ y: 30, delay: 1.4 })}>
-                                    <a href="https://github.com/Emya101" target="_blank" rel="noopener noreferrer" ><Github /></a>
-                                    <a href="https://www.linkedin.com/in/supreme-emhenya/" target="_blank" rel="noopener noreferrer"><Linkedin /></a>
-                                    <a href="mailto:emhenyasupreme@gmail.com"><Mail /></a>
+                                <motion.div variants={itemAnimSettings({ y: 30, delay: 1.4 })} className={styles.socials}>
+                                    <a href="https://github.com/Emya101" target="_blank" rel="noopener noreferrer" className={`${styles.socialIcon} ${styles.github}`}><Github /></a>
+                                    <a href="https://www.linkedin.com/in/supreme-emhenya/" target="_blank" rel="noopener noreferrer" className={`${styles.socialIcon} ${styles.linkedin}`}><Linkedin /></a>
+                                    <a href="mailto:emhenyasupreme@gmail.com" className={`${styles.socialIcon} ${styles.email}`}><Mail /></a>
                                 </motion.div>
 
                             </div>
