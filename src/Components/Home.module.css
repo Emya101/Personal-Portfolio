@@ -1,0 +1,32 @@
+.whole {
+    padding-top: 4rem;
+}
+
+.heroSection {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.firstContainer {
+    position: relative;
+    z-index: 10;
+    max-width: 80rem;
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+/* .Background{
+    position:absolute;
+    inset:0;
+    background: linear-gradient(to bottom right, #eff6ff, #f5f3ff, #fdf2f8);
+} */
+
+@media (min-width: 768px) {
+    .whole {
+        padding-top: 5rem;
+    }
+}
