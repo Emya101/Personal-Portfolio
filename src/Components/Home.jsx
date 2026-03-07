@@ -34,14 +34,6 @@ export function Home() {
         <div className={styles.whole}>
             <section className={styles.heroSection}>
                 <div className={styles.Background}>
-                    {/* <div>
-                        { /* Left content section*/}
-                    {/* <img
-                            src="https://images.unsplash.com/photo-1772475385529-92037713a057?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b3Jrc3BhY2UlMjBkZXNrJTIwbWluaW1hbHxlbnwxfHx8fDE3NzI2MTAxOTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                            alt="My Photo"
-                        >
-                        </img>
-                    </div>  */}
 
                     <div className={styles.firstContainer}>
                         <motion.div
@@ -50,61 +42,68 @@ export function Home() {
                             initial="hidden"
                             animate="visible"
                         >
-
-                            {/* Title block */}
-                            <motion.div variants={itemAnimSettings({ y: 20, delay: 0.2 })}>
-                                Available for hire
-                            </motion.div>
-
-                            <motion.h1 variants={itemAnimSettings({ y: 30, delay: 0.4 })}>
-                                Hello, I'm <span>[Name]</span>
-                            </motion.h1>
-
-                            <motion.p variants={itemAnimSettings({ y: 30, delay: 0.6 })}>Software Developer</motion.p>
-                            <motion.p variants={itemAnimSettings({ y: 30, delay: 0.8 })}>Full-Stack Applications • APIs • Cloud Systems • Technical Systems</motion.p>
+                            <div className={styles.imageSide}>
+                                <img
+                                    src="https://images.unsplash.com/photo-1772475385529-92037713a057?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b3Jrc3BhY2UlMjBkZXNrJTIwbWluaW1hbHxlbnwxfHx8fDE3NzI2MTAxOTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                                    alt="My Photo"
+                                >
+                                </img>
+                            </div>
 
 
-                            {/* Description */}
-                            <motion.p variants={itemAnimSettings({ y: 30, delay: 1.0 })}>
+                            <div className={styles.textSide}>
+                                {/* Title block */}
+                                <motion.div variants={itemAnimSettings({ y: 20, delay: 0.2 })} className={styles.badge}>
+                                    Available for hire
+                                </motion.div>
 
-                                I build modern web applications and backend systems using contemporary
-                                technologies, creating scalable and user-focused digital solutions.
+                                <motion.h1 variants={itemAnimSettings({ y: 30, delay: 0.4 })} className={styles.title}>
+                                    Hello, I'm <span className={`${styles.nameColor} animate-typewriter animate-duration-1000 animate-cursor`}>[Name]</span>
+                                </motion.h1>
 
-                            </motion.p>
-
-                            {/* Buttons */}
-                            <motion.div variants={itemAnimSettings({ y: 30, delay: 1.2 })}>
-                                <Link to="/projects">View my work</Link>
-                                <Link to="/contact">Get in touch</Link>
-                            </motion.div>
-
-                            {/* Social Icons */}
-                            <motion.div variants={itemAnimSettings({ y: 30, delay: 1.4 })}>
-                                <a href="https://github.com/Emya101"><Github /></a>
-                                <a href="https://linkedin.com"><Linkedin /></a>
-                                <a href="mailto:email@example.com"><Mail /></a>
-                            </motion.div>
+                                <motion.p variants={itemAnimSettings({ y: 30, delay: 0.6 })} className={styles.subtitle}>Software Developer</motion.p>
+                                <motion.p variants={itemAnimSettings({ y: 30, delay: 0.8 })} className={styles.subtitle}>Full-Stack Applications • APIs • Cloud Systems • Technical Systems</motion.p>
 
 
+                                {/* Description */}
+                                <motion.p variants={itemAnimSettings({ y: 30, delay: 1.0 })}>
 
+                                    I build modern web applications and backend systems using contemporary
+                                    technologies, creating scalable and user-focused digital solutions.
 
+                                </motion.p>
 
-                            <motion.div variants={itemAnimSettings({y:30, delay:1.6})}>
-                                {details.map((detail, index) => (
-                                    <div key={index}>
-                                        <>
-                                            <div>
-                                                <detail.icon />
-                                            </div>
-                                            <div>
-                                                <div>{detail.value}</div>
-                                                <div>{detail.label}</div>
-                                            </div>
-                                        </>
-                                    </div>
-                                ))}
+                                {/* Buttons */}
+                                <motion.div variants={itemAnimSettings({ y: 30, delay: 1.2 })}>
+                                    <Link to="/projects">View my work</Link>
+                                    <Link to="/contact">Get in touch</Link>
+                                </motion.div>
 
-                            </motion.div>
+                                {/* Social Icons */}
+                                <motion.div variants={itemAnimSettings({ y: 30, delay: 1.4 })}>
+                                    <a href="https://github.com/Emya101" target="_blank" rel="noopener noreferrer" ><Github /></a>
+                                    <a href="https://www.linkedin.com/in/supreme-emhenya/" target="_blank" rel="noopener noreferrer"><Linkedin /></a>
+                                    <a href="mailto:emhenyasupreme@gmail.com"><Mail /></a>
+                                </motion.div>
+
+                            </div>
+                        </motion.div>
+
+                        <motion.div variants={itemAnimSettings({ y: 30, delay: 1.6 })}>
+                            {details.map((detail, index) => (
+                                <div key={index}>
+                                    <>
+                                        <div>
+                                            <detail.icon />
+                                        </div>
+                                        <div>
+                                            <div>{detail.value}</div>
+                                            <div>{detail.label}</div>
+                                        </div>
+                                    </>
+                                </div>
+                            ))}
+
                         </motion.div>
 
                         <div>
