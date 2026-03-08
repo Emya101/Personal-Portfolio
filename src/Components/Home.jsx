@@ -76,11 +76,19 @@ export function Home() {
                         animate="visible"
                     >
                         <motion.div variants={itemAnimSettings({ y: 30, delay: 1.8 })} className={styles.imageSide}>
-                            <img
-                                src={myImage}
-                                alt="My Photo"
-                            >
-                            </img>
+                            <div className={styles.imageWrapper}>
+                                <motion.div className={styles.imageGlow} animate={{ scale: [1, 1.1, 1], rotate:[0,20,-20,0]}} transition={{
+                                    duration: 11,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}  ></motion.div>
+                                <img
+                                    src={myImage}
+                                    alt="My Photo"
+                                    className={styles.image}
+                                >
+                                </img>
+                            </div>
                         </motion.div>
 
 
