@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import myImage from "../assets/MyPicture.jpg"
 
 export function Home() {
-    const containerAnimSettings = (stagger = 0.2) => ({
+    const containerAnimSettings = (stagger = 0.2) => ({ //Parent Container Function
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -16,7 +16,7 @@ export function Home() {
         }
     });
 
-    const itemAnimSettings = ({ y = 20, duration = 0.5, delay = 0 } = {}) => ({
+    const itemAnimSettings = ({ y = 20, duration = 0.5, delay = 0 } = {}) => ({ //Item Container Function
         hidden: { opacity: 0, y },
         visible: {
             opacity: 1,
@@ -24,7 +24,7 @@ export function Home() {
             transition: { duration, delay },
         },
     });
-    const details = [
+    const details = [// Stats array, helps to render the stats section
         { icon: Code2, label: "Projects Built", value: "15+" },
         { icon: Briefcase, label: "Years of Experience", value: "2+" },
         { icon: GraduationCap, label: "Bsc Applied Computer Science", value: "2025" },
@@ -43,7 +43,7 @@ export function Home() {
                             initial="hidden"
                             animate="visible"
                         >
-                            <motion.div variants={itemAnimSettings({y: 30, delay: 1.8 })} className={styles.imageSide}>
+                            <motion.div variants={itemAnimSettings({ y: 30, delay: 1.8 })} className={styles.imageSide}> 
                                 <img
                                     src={myImage}
                                     alt="My Photo"
@@ -96,30 +96,34 @@ export function Home() {
                                 </motion.div>
 
                             </div>
-                        </motion.div>
 
-                        <motion.div variants={itemAnimSettings({ y: 30, delay: 1.6 })}>
-                            {details.map((detail, index) => (
-                                <div key={index}>
-                                    <>
-                                        <div>
+                            {/* Stats Section */}
+                            <motion.div variants={containerAnimSettings(0.25)} className={styles.statsGrid}>
+                                {details.map((detail, index) => (
+                                    <motion.div key={index} variants={itemAnimSettings({
+                                        y: 30,
+                                        delay: 1.6 + index * 0.3
+                                    })} className={styles.statCard}>
+
+                                        <div className={styles.statIconBox}>
                                             <detail.icon />
                                         </div>
-                                        <div>
-                                            <div>{detail.value}</div>
-                                            <div>{detail.label}</div>
+                                        <div className={styles.statText}>
+                                            <div className={styles.statValue}>{detail.value}</div>
+                                            <div className={styles.statLabel}>{detail.label}</div>
                                         </div>
-                                    </>
-                                </div>
-                            ))}
+                                    </motion.div>
 
+                                ))}
+
+                            </motion.div>
                         </motion.div>
-
-                        <div>
+                        {/* Mouse Icon */}
+                        <motion.div className={styles.scrollIndicator} initial= {{opacity:0,y:0}} animate={{opacity:1, y:[0,10,0]}} transition={{ opacity: {delay:3.0, duration:0.4}, y:{delay:2.2 , duration: 2, repeat: Infinity, ease:"easeInOut"}}}>
                             <div>
-                                <div />
+                                <div className={styles.scrollDot} />
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section >
