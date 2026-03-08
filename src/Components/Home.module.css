@@ -144,8 +144,8 @@
 }
 
 .secondaryButton:hover {
-    border-color: #D9A296;
-    color: #D9A296;
+    border-color: #D97B73;
+    color: #D97B73;
 }
 
 .secondaryButton:hover .messageCircle {
@@ -164,7 +164,7 @@
 
 .socialIcon {
     padding: 0.75em;
-    background: #7eeeee;
+    background: #D9A296 ;
     color: #374151;
     border-radius: 0.5rem;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
@@ -242,7 +242,7 @@
 
     width: 30px;
     height: 40px;
-    border: 2px solid #D9A296;
+    border: 2px solid #45858C;
     border-radius: 20px;
 
     display: flex;
@@ -254,7 +254,7 @@
 .scrollDot {
     width: 4px;
     height: 8px;
-    background: #ccc;
+    background: #D9A296;
     border-radius: 2px;
 }
 
@@ -262,7 +262,7 @@
     position: absolute;
     width: 100%;
     inset: 0;
-    background: linear-gradient(to bottom right, #eff6ff, #f5f3ff, #fdf2f8);
+    background: linear-gradient(to bottom right, #d9d4a0, #f5f5f1, #d9d4a0);
     opacity: 0.85;
     z-index: 0;
 }
