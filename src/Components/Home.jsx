@@ -34,7 +34,7 @@ export function Home() {
     return (
         <div className={styles.whole}>
             <section className={styles.heroSection}>
-                <div className={styles.Background}>
+                <div className={styles.Background}></div>
 
                     <div className={styles.firstContainer}>
                         <motion.div
@@ -103,7 +103,10 @@ export function Home() {
                                     <motion.div key={index} variants={itemAnimSettings({
                                         y: 30,
                                         delay: 1.6 + index * 0.3
-                                    })} className={styles.statCard}>
+                                    })}
+                                    whileHover={{scale: 1.05, y:-3}}
+                                    transition={{type:"spring", stiffness:300}}
+                                     className={styles.statCard}>
 
                                         <div className={styles.statIconBox}>
                                             <detail.icon />
@@ -125,7 +128,7 @@ export function Home() {
                             </div>
                         </motion.div>
                     </div>
-                </div>
+                
             </section >
         </div >
     );
