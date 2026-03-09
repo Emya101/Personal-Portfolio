@@ -99,7 +99,7 @@ export function Home() {
                             </motion.div>
 
                             <motion.h1 variants={itemAnimSettings({ y: 30, delay: 0.4 })} className={styles.title}>
-                                Hello, I'm <span className={styles.nameColor}>[Name]</span>
+                                Hello, I'm <span className={styles.nameColor}>Supreme</span>
                             </motion.h1>
 
                             <motion.p variants={itemAnimSettings({ y: 30, delay: 0.6 })} className={styles.subtitle}>Software Developer</motion.p>

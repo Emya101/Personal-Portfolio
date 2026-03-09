@@ -17,13 +17,18 @@
     z-index: 10;
     max-width: 80rem;
     margin: auto;
-    padding: 5rem 1rem;
+    padding: 3rem 1rem;
 }
 
 .heroGrid {
     display: grid;
-    gap: 3rem;
+    gap: 6rem;
     align-items: center;
+
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "image text"
+        "stats stats";
 }
 
 .imageSide {
@@ -52,6 +57,7 @@
     height: 110vh;
     border-radius: 1rem;
     object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 .imageGlow {
@@ -69,7 +75,7 @@
     background: #f39696;
     color: #45858C;
     border-radius: 20px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
 }
 
 .title {
@@ -94,8 +100,6 @@
     color: #6b7280;
     margin-bottom: 2rem;
     max-width: 36rem;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .buttonGroup {
@@ -164,7 +168,7 @@
 
 .socialIcon {
     padding: 0.75em;
-    background: #D9A296 ;
+    background: #D9A296;
     color: #374151;
     border-radius: 0.5rem;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
@@ -237,7 +241,7 @@
 
 .scrollIndicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 2px;
     left: 48.6%;
 
     width: 30px;
@@ -291,18 +295,67 @@
     background: #D97B73;
 }
 
-@media (min-width:1024px) {
-
+@media (max-width:1024px) {
     .heroGrid {
-        grid-template-columns: 1fr 1fr;
+        display: grid;
+        gap: 3rem;
+        align-items: center;
+
+        grid-template-columns: 1fr;
         grid-template-areas:
-            "image text"
-            "stats stats";
+            "image"
+            "text"
+            "stats";
     }
+
 }
 
 @media (min-width: 768px) {
     .whole {
         padding-top: 5rem;
     }
+}
+
+@media (max-width:768px) {
+
+    .imageSide {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .imageSide img {
+        height: auto;
+        max-height: 350px;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .textSide {
+        grid-area: text;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .imageGlow {
+        filter: blur(30px);
+        transform: scale(0.7);
+    }
+
+    .firstCircle,
+    .secondCircle {
+        width: 12rem;
+        height: 12rem;
+    }
+
 }
