@@ -1,0 +1,151 @@
+.footer {
+    background: #c7dfdf;
+    border-top: 1px solid #a8a9aa;
+    margin-top: 4rem;
+}
+
+.container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media(min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #45858C, #D94E4E);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: rgb(78, 16, 16);
+    margin-bottom: 2rem;
+}
+
+.socialRow {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.socialBtn {
+    padding: 0.5rem;
+    background: #D97B73;
+    color: black;
+    border-radius: 0.5rem;
+    transition: all 0.1s ease-in-out;
+}
+
+.socialBtn:nth-child(1):hover {
+    background-color: black;
+    color: white;
+}
+
+.socialBtn:nth-child(2):hover {
+    background: #0A66C2;
+    color: white;
+}
+
+.socialBtn:nth-child(3):hover {
+    color: white;
+    background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+}
+
+.socialBtn:nth-child(4):hover {
+    color: white;
+    background: #1DBF73;
+}
+
+.socialBtn:nth-child(5):hover {
+    color: white;
+    background: #D94E4E;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.heading {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    margin-bottom: 0.5rem;
+}
+
+.Nav {
+    color: #374151;
+}
+
+.Nav:hover {
+    color: #D94E4E;
+}
+
+.contactList {
+    list-style: none;
+    padding: 0;
+    color: #4b5563;
+}
+
+.bottomBar {
+    padding-top: 2rem;
+    border-top: 1px solid #45858C;
+}
+
+.bottomContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    color: #4b5563;
+}
+
+.copy {
+    font-size: 0.875rem;
+}
+
+.madeNotice{
+    display: flex;
+    align-items: center;
+    gap:0.25rem;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+.heart{
+    width:16px;
+    height:16px;
+    color:red;
+    fill:red;
+}
+
+@media (max-width: 768px) {
+    .bottomContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

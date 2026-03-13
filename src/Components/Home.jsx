@@ -32,6 +32,7 @@ export function Home() {
     ];
 
     return (
+        
         <div className={styles.whole}>
             <section className={styles.heroSection}>
                 <div className={styles.Background}></div>
@@ -168,7 +169,6 @@ export function Home() {
                         </div>
                     </motion.div>
                 </div>
-
             </section >
         </div >
     );
