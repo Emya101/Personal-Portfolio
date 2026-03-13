@@ -51,7 +51,7 @@ export function Navigation() {
                             className={`${styles.navLink} ${location.pathname===link.path? styles.activeLink: styles.inactiveLink}`}
                             >
                                 {link.label}
-                                {location.pathname === link.path &&(
+                                {location.pathname === link.path &&( //if location.pathname is equal to link path, the animated undeline appears under specific location
                                     <motion.div layoutId="activeNav"
                                     className={styles.activeUnderline}
                                     />
