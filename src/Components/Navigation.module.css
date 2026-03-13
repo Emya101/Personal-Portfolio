@@ -8,7 +8,7 @@
 }
 
 .transparent {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(182, 240, 136, 0.08);
     backdrop-filter: blur(8px);
 }
 
@@ -28,7 +28,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4rem;
+    height: 4.5rem;
 }
 
 .logo {
@@ -64,6 +64,10 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+.mode:hover .modeSymbol {
+    background: linear-gradient(to right, #45858C, #D97B73);
+}
+
 .modeSymbol {
     color: white;
     padding: 10px;
@@ -71,4 +75,37 @@
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 50%;
     transition: all 0.25s ease;
+}
+
+.desktopNav{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+}
+
+.navLink{
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.activeLink{
+    color: #D94E4E; 
+}
+
+.inactiveLink{
+    color: #374151;
+}
+
+.inactiveLink:hover{
+    color: #D97B73;
+}
+
+.activeUnderline{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom: -0.25rem;
+    height:2px;
+    background: #45858C;
 }

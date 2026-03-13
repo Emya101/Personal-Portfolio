@@ -48,9 +48,14 @@ export function Navigation() {
                             <Link
                             key={link.path}
                             to={link.path}
-                            className={styles.navLink}
+                            className={`${styles.navLink} ${location.pathname===link.path? styles.activeLink: styles.inactiveLink}`}
                             >
                                 {link.label}
+                                {location.pathname === link.path &&(
+                                    <motion.div layoutId="activeNav"
+                                    className={styles.activeUnderline}
+                                    />
+                                )}
                             </Link>
                         ))}
 

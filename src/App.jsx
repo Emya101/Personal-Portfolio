@@ -11,7 +11,6 @@ function App() {
   return (
     <>
       <div>
-      Portfolio
       <Navigation/>
       <Home/>
       <Footer/>
