@@ -41,6 +41,14 @@ export function Navigation() {
                                 {link.label}
                             </Link>
                         ))}
+
+                        <a href= "src/assets/Supreme's Portfolio Resume.pdf"
+                        download
+                        className={styles.cvButton}
+                        >
+                            <FileText className={styles.cvIcon} />
+                            Download CV
+                        </a>
                     </div>
                 </div>
             </div>
