@@ -3,9 +3,21 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import resumePdf from "../assets/Supreme's Portfolio Resume.pdf"
 
 export function Navigation() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] =useState(false);
+    const location= useLocation();
 
+    useEffect(()=>{
+        const handleScroll=()=>{
+            setIsScrolled(window.scrollY>20); //checks for window scroll past 20 pixels
+        };
+
+        window.addEventListener("scroll", handleScroll); //causes the function to check everytime user scrolls
+        return ()=> window.removeEventListener("scroll", handleScroll);
+    }, []);//effect should only run once
     const navLinks=[
         {path:"/", label: "Home"},
         {path:"/about", label: "About"},
@@ -19,7 +31,7 @@ export function Navigation() {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 1 }}
-            className={styles.navigation}
+            className={`${styles.navigation} ${isScrolled? styles.scrolled : styles.transparent}`}//Changes state of navigation based on scroll position
         >
             <div className={styles.container}>
                 <div className={styles.navInner}>
@@ -28,7 +40,7 @@ export function Navigation() {
                     </Link>
 
                     <div className={styles.mode}>
-                        <Sun color="black"/>
+                        <Sun className={styles.modeSymbol}/>
                     </div>
 
                     <div className={styles.desktopNav}>
@@ -42,7 +54,7 @@ export function Navigation() {
                             </Link>
                         ))}
 
-                        <a href= "src/assets/Supreme's Portfolio Resume.pdf"
+                        <a href= {resumePdf}
                         download
                         className={styles.cvButton}
                         >
