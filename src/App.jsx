@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { Header } from './Components/Header'
+import { Navigation } from './Components/Navigation'
 import { Home } from './Components/Home'
 import { Footer } from './Components/Footer'
 
@@ -12,7 +12,7 @@ function App() {
     <>
       <div>
       Portfolio
-      <Header/>
+      <Navigation/>
       <Home/>
       <Footer/>
       </div>
