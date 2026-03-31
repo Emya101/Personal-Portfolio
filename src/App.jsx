@@ -1,21 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import { Navigation } from './Components/Navigation'
-import { Home } from './Components/Home'
-import { Footer } from './Components/Footer'
+import {Routes, Route} from 'react-router-dom';
+import {Layout} from "./Components/Layout";
+import { Navigation } from './Components/Navigation';
+import { Home } from './Components/Home';
+import {About} from './Components/About';
+import { Footer } from './Components/Footer';
 
 function App() {
 
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-      <Navigation/>
-      <Home/>
-      <Footer/>
-      </div>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<Home/>}/>
+      </Route>
+    </Routes>
   )
 }
 
