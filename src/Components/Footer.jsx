@@ -69,7 +69,7 @@ export function Footer() {
                         <h3 className={styles.heading}>Get in Touch</h3>
                         <ul className={styles.contactList}>
                             <li>Winnipeg, Manitoba</li>
-
+                            
                             <li>
                                 <a href="mailto:emhenyasupreme@gmail.com" className={styles.Nav}>
                                     emhenyasupreme@gmail.com
