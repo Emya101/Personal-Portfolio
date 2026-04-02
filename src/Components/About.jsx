@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./About.module.css";
 import aboutImage from "../assets/AboutMe.jpg";
-import { Code2, Database, Palette, Smartphone, Globe, Cloud, Wrench, Terminal } from "lucide-react";
+import { Code2, Database, Palette, Smartphone, Globe, Cloud, Wrench, Terminal, BookOpen } from "lucide-react";
 
 export function About() {
     const skills = [
@@ -16,7 +16,6 @@ export function About() {
 
     return (
         <div className={styles.aboutPage}>
-
             <div className={styles.header}>
                 <h1 className={styles.title}>
                     About <span className={styles.gradient}>Me</span>
@@ -79,6 +78,49 @@ export function About() {
                             </div>
                         ))}
                     </div>
+                </div>
+
+            </div>
+
+            <div className={styles.bottomSection}>
+                <div className={styles.card}>
+                    <div className={styles.Heading}>
+                    <div
+                        className={styles.iconBox}
+                        style={{ background: "linear-gradient(to bottom right, #6AA6A6, #D97B73)" }}
+                    >
+                        <Globe className={styles.Globe} size={22}></Globe>
+                    </div>
+                    <h3>Education</h3>
+                    </div>
+
+                    <div className={styles.timeline}>
+                        <div>
+                            <p>2021 - 2025</p>
+                            <h4>BSc Applied Computer Science</h4>
+                            <span>University of Winnipeg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className={styles.card}>
+                    <div className={styles.Heading}>
+                    <div
+                        className={styles.iconBox}
+                        style={{ background: "linear-gradient(to bottom right, #6AA6A6, #D97B73)" }}
+                    >
+                        <BookOpen className={styles.Globe} size={22}></BookOpen>
+                    </div>
+                    <h3>Certifications</h3>
+                    </div>
+
+                    <ul>
+                        <li>AWS Cloud Practitioner</li>
+                        <li>Mastering JavaScript and jQuery Course Beginners to Advanced</li>
+                        <li>Web Design Course with HTML,CSS and Wordpress</li>
+                        <li>JavaScript Fundamentals to Advanced: Full Stack Development</li>
+                        <li>The Data Science Course: Complete Data Science Bootcamp</li>
+                    </ul>
                 </div>
 
             </div>
