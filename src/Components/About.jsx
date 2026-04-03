@@ -53,45 +53,45 @@ export function About() {
                     </div>
                 </div>
 
-                <div className={styles.skillsSection}>
-                    <h2>Skills & Expertise</h2>
+            </div>
 
-                    <div className={styles.skillsGrid}>
-                        {skills.map((skill, index) => (
-                            <div key={index} className={styles.skillCard}>
-                                <div className={styles.skillHeader}>
-                                    <div
-                                        className={styles.iconBox}
-                                        style={{ background: skill.color }}
-                                    >
-                                        <skill.icon size={22} />
-                                    </div>
-                                    <h3>{skill.category}</h3>
+            <div className={styles.skillsSection}>
+                <h2 className={styles.skillTitle}>Skills & Expertise</h2>
+
+                <div className={styles.skillsGrid}>
+                    {skills.map((skill, index) => (
+                        <div key={index} className={styles.skillCard}>
+                            <div className={styles.skillHeader}>
+                                <div
+                                    className={styles.iconBox}
+                                    style={{ background: skill.color }}
+                                >
+                                    <skill.icon size={22} />
                                 </div>
-
-
-                                <div className={styles.skillItems}>
-                                    {skill.items.map((item, i) => (
-                                        <span key={i}>{item}</span>
-                                    ))}
-                                </div>
+                                <h3>{skill.category}</h3>
                             </div>
-                        ))}
-                    </div>
-                </div>
 
+
+                            <div className={styles.skillItems}>
+                                {skill.items.map((item, i) => (
+                                    <span key={i}>{item}</span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
 
             <div className={styles.bottomSection}>
                 <div className={styles.card}>
                     <div className={styles.Heading}>
-                    <div
-                        className={styles.iconBox}
-                        style={{ background: "linear-gradient(to bottom right, #6AA6A6, #D97B73)" }}
-                    >
-                        <Globe className={styles.Globe} size={22}></Globe>
-                    </div>
-                    <h3>Education</h3>
+                        <div
+                            className={styles.iconBox}
+                            style={{ background: "linear-gradient(to bottom right, #6AA6A6, #D97B73)" }}
+                        >
+                            <Globe className={styles.Globe} size={22}></Globe>
+                        </div>
+                        <h3>Education</h3>
                     </div>
 
                     <div className={styles.timeline}>
@@ -105,13 +105,13 @@ export function About() {
 
                 <div className={styles.card}>
                     <div className={styles.Heading}>
-                    <div
-                        className={styles.iconBox}
-                        style={{ background: "linear-gradient(to bottom right, #6AA6A6, #D97B73)" }}
-                    >
-                        <BookOpen className={styles.Globe} size={22}></BookOpen>
-                    </div>
-                    <h3>Certifications</h3>
+                        <div
+                            className={styles.iconBox}
+                            style={{ background: "linear-gradient(to bottom right, #6AA6A6, #D97B73)" }}
+                        >
+                            <BookOpen className={styles.Globe} size={22}></BookOpen>
+                        </div>
+                        <h3>Certifications</h3>
                     </div>
 
                     <ul>
