@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import styles from "./About.module.css";
 import aboutImage from "../assets/AboutMe.jpg";
+import degreeImage from "../assets/Certificate.png"
 import { Code2, Database, Palette, Smartphone, GraduationCap, Cloud, Wrench, Terminal, BookOpen } from "lucide-react";
+import { useState } from "react";
 
 export function About() {
     const skills = [
@@ -33,6 +35,8 @@ export function About() {
             transition: { duration, delay },
         },
     });
+
+    const [showDegreeModal, setShowDegreeModal] = useState(false);
 
     return (
         <div className={styles.aboutPage}>
@@ -166,10 +170,10 @@ export function About() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.15 }}
-                >
-                <motion.div 
-                className={styles.card}
-                variants={itemAnimSettings({y:28})}>
+            >
+                <motion.div
+                    className={styles.card}
+                    variants={itemAnimSettings({ y: 28 })}>
                     <div className={styles.Heading}>
                         <div
                             className={styles.iconBox}
@@ -183,10 +187,38 @@ export function About() {
                     <div className={styles.timeline}>
                         <div>
                             <div className={styles.cover}>
-                            <p>2021 - 2025</p>
+                                <p>2021 - 2025</p>
                             </div>
                             <h4>BSc Applied Computer Science</h4>
-                            <span>University of Winnipeg</span>
+                            <span>
+                                University of Winnipeg{" "}
+                                <button
+                                    type="button"
+                                    onClick={() => setShowDegreeModal(true)}
+                                    className={styles.degreeButton}>
+                                    View Degree
+                                </button>
+
+                                {showDegreeModal && (
+                                    <div className={styles.modalOverlay} onClick={() => setShowDegreeModal(false)}>
+                                        <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                                            <button
+                                                className={styles.closeButton}
+                                                onClick={() => setShowDegreeModal(false)}
+                                            >
+                                                ❌
+                                            </button>
+
+                                            <img
+                                                src={degreeImage}
+                                                alt="Bachelor of Science in Applied Computer Science certificate"
+                                                className={styles.degreePreview}
+                                            />
+
+                                        </div>
+                                    </div>
+                                )}
+                            </span>
                         </div>
                     </div>
                 </motion.div>
