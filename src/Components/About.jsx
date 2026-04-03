@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./About.module.css";
 import aboutImage from "../assets/AboutMe.jpg";
-import { Code2, Database, Palette, Smartphone, Globe, Cloud, Wrench, Terminal, BookOpen } from "lucide-react";
+import { Code2, Database, Palette, Smartphone, GraduationCap, Cloud, Wrench, Terminal, BookOpen } from "lucide-react";
 
 export function About() {
     const skills = [
@@ -14,9 +14,33 @@ export function About() {
         { category: "Tools", icon: Wrench, items: ["Git", "Github", "Postman", "Clerk", "Stripe", "VS Code"], color: "#eab308" },
     ];
 
+    const containerAnimSettings = (stagger = 0.12) => ({
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: stagger,
+                delayChildren: 0.15,
+            },
+        },
+    });
+
+    const itemAnimSettings = ({ y = 24, duration = 0.55, delay = 0 } = {}) => ({
+        hidden: { opacity: 0, y },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration, delay },
+        },
+    });
+
     return (
         <div className={styles.aboutPage}>
-            <div className={styles.header}>
+            <motion.div
+                className={styles.header}
+                initial={{ opacity: 0, y: -24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}>
                 <h1 className={styles.title}>
                     About <span className={styles.gradient}>Me</span>
                 </h1>
@@ -24,43 +48,97 @@ export function About() {
                 <p className={styles.subtitle}>
                     Get to know more about my background, skills, and what drives me
                 </p>
-            </div>
+            </motion.div>
 
-            <div className={styles.introSection}>
-                <div className={styles.imageWrapper}>
+            <motion.div
+                className={styles.introSection}
+                variants={containerAnimSettings(0.18)}
+                initial="hidden"
+                animate="visible"
+            >
+                <motion.div
+                    className={styles.imageWrapper}
+                    variants={itemAnimSettings({ y: 30, duration: 0.65 })}
+                >
                     <img src={aboutImage} alt="About me" />
-                </div>
+                </motion.div>
 
-                <div className={styles.textContent}>
-                    <h2>My Journey</h2>
+                <motion.div
+                    className={styles.textContent}
+                    variants={containerAnimSettings(0.12)}
+                >
+                    <motion.h2
+                        variants={itemAnimSettings({ y: 20 })}
+                    >My Journey</motion.h2>
 
-                    <p>
+                    <motion.p
+                        variants={itemAnimSettings({ y: 24, delay: 0.05 })}>
                         I'm a full-stack developer focused on building modern, responsive web applications
                         that deliver real value. I enjoy solving complex problems and turning ideas into
                         practical, real-world solutions.
-                    </p>
+                    </motion.p>
 
-                    <p>
+                    <motion.p
+                        variants={itemAnimSettings({ y: 24, delay: 0.1 })}>
                         I specialize in React and backend development, including server creation, API
                         integration, and database management. I'm always learning new technologies to
                         improve my skills and stay current in a fast-moving industry.
-                    </p>
+                    </motion.p>
 
-                    <div className={styles.tags}>
+                    <motion.div
+                        className={styles.tags}
+                        variants={{
+                            hidden: {},
+                            show: {
+                                transition: {
+                                    staggerChildren: 0.50,
+                                }
+                            }
+                        }}
+                        initial="hidden"
+                        animate="show"
+                    >
                         {["Problem Solver", "Team Player", "Fast Learner", "Adaptable", "Collaborative", "Detail-oriented"].map((tag, i) => (
-                            <span key={i}>{tag}</span>
+                            <motion.span
+                                key={i}
+                                variants={{
+                                    hidden: { opacity: 0, x: -25 },
+                                    show: {
+                                        opacity: 1,
+                                        x: 0,
+                                        transition: { duration: 0.4, ease: "easeOut" },
+                                    },
+                                }}
+                                whileHover={{ scale: 1.05, x: 3 }}>
+                                {tag}
+                            </motion.span>
                         ))}
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-            </div>
+            </motion.div>
 
-            <div className={styles.skillsSection}>
-                <h2 className={styles.skillTitle}>Skills & Expertise</h2>
+            <motion.div
+                className={styles.skillsSection}
+                variants={containerAnimSettings(0.1)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+            >
+                <motion.h2
+                    className={styles.skillTitle}
+                    variants={itemAnimSettings({ y: 24 })}
+                >Skills & Expertise
+                </motion.h2>
 
                 <div className={styles.skillsGrid}>
                     {skills.map((skill, index) => (
-                        <div key={index} className={styles.skillCard}>
+                        <motion.div
+                            key={index}
+                            className={styles.skillCard}
+                            variants={itemAnimSettings({ y: 28, duration: 0.5 })}
+                            whileHover={{ scale: 1.02, y: -5 }}
+                        >
                             <div className={styles.skillHeader}>
                                 <div
                                     className={styles.iconBox}
@@ -77,31 +155,41 @@ export function About() {
                                     <span key={i}>{item}</span>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
 
-            <div className={styles.bottomSection}>
-                <div className={styles.card}>
+            <motion.div
+                className={styles.bottomSection}
+                variants={containerAnimSettings(0.16)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+                >
+                <motion.div 
+                className={styles.card}
+                variants={itemAnimSettings({y:28})}>
                     <div className={styles.Heading}>
                         <div
                             className={styles.iconBox}
                             style={{ background: "linear-gradient(to bottom right, #6AA6A6, #D97B73)" }}
                         >
-                            <Globe className={styles.Globe} size={22}></Globe>
+                            <GraduationCap className={styles.Globe} size={22}></GraduationCap>
                         </div>
                         <h3>Education</h3>
                     </div>
 
                     <div className={styles.timeline}>
                         <div>
+                            <div className={styles.cover}>
                             <p>2021 - 2025</p>
+                            </div>
                             <h4>BSc Applied Computer Science</h4>
                             <span>University of Winnipeg</span>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className={styles.card}>
                     <div className={styles.Heading}>
@@ -123,7 +211,7 @@ export function About() {
                     </ul>
                 </div>
 
-            </div>
+            </motion.div>
         </div>
     )
 }
