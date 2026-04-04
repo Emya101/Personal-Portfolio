@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./About.module.css";
 import aboutImage from "../assets/AboutMe.jpg";
 import degreeImage from "../assets/Certificate.png"
@@ -199,25 +199,41 @@ export function About() {
                                     View Degree
                                 </button>
 
-                                {showDegreeModal && (
-                                    <div className={styles.modalOverlay} onClick={() => setShowDegreeModal(false)}>
-                                        <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                                            <button
-                                                className={styles.closeButton}
-                                                onClick={() => setShowDegreeModal(false)}
+                                <AnimatePresence>
+                                    {showDegreeModal && (
+                                        <motion.div
+                                            className={styles.modalOverlay}
+                                            onClick={() => setShowDegreeModal(false)}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 0.25 }}
+                                        >
+                                            <motion.div
+                                                className={styles.modalContent}
+                                                onClick={(e) => e.stopPropagation()}
+                                                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                                                transition={{ duration: 0.3, ease: "easeOut" }}
                                             >
-                                                ❌
-                                            </button>
+                                                <button
+                                                    className={styles.closeButton}
+                                                    onClick={() => setShowDegreeModal(false)}
+                                                >
+                                                    ❌
+                                                </button>
 
-                                            <img
-                                                src={degreeImage}
-                                                alt="Bachelor of Science in Applied Computer Science certificate"
-                                                className={styles.degreePreview}
-                                            />
+                                                <img
+                                                    src={degreeImage}
+                                                    alt="Bachelor of Science in Applied Computer Science certificate"
+                                                    className={styles.degreePreview}
+                                                />
 
-                                        </div>
-                                    </div>
-                                )}
+                                            </motion.div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </span>
                         </div>
                     </div>
