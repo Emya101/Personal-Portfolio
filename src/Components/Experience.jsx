@@ -144,7 +144,7 @@ export function Experience() {
                                 <div className={styles.metaRow}>
                                     <div className={styles.metaItem}>
                                         <Calendar size={26} />
-                                        <span style={{fontSize: 16}}>{exp.period}</span>
+                                        <span style={{ fontSize: 16 }}>{exp.period}</span>
                                     </div>
 
                                     <div className={styles.metaItem}>
@@ -187,10 +187,40 @@ export function Experience() {
                         </motion.div>
                     ))}
                 </div>
+            </motion.div>
 
+            <motion.div
+                className={styles.awardSection}
+                variants={containerAnimSettings(0.14)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+            >
+                <motion.h2
+                    variants={itemAnimSettings({ x: 0, y: 20 })}
+                    className={styles.awardsTitle}>
+                    Awards & Recognition
+                </motion.h2>
 
+                <div className={styles.awardsGrid}>
+                    {achievements.map((achievement, index) => (
+                        <motion.div
+                            key={index}
+                            variants={itemAnimSettings({ x: 0, y: 24, duration: 0.5 })}
+                            whileHover={{ y: -8 }}
+                            className={styles.awardCard}
+                        >
+                            <div className={styles.awardIconWrap}>
+                                <achievement.icon size={30}/>
+                            </div>
 
+                            <h3 className={styles.awardName}>{achievement.title}</h3>
+                            <p className={styles.awardYear}>{achievement.year}</p>
+                            <p className={styles.awardDescription}>{achievement.description}</p>
 
+                        </motion.div>
+                    ))}
+                </div>
             </motion.div>
 
         </div>
