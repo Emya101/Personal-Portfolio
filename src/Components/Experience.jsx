@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import styles from "./Experience.module.css";
 import { Briefcase, Calendar, MapPin, Award, TrendingUp } from "lucide-react";
 
@@ -130,7 +130,7 @@ export function Experience() {
 
                             <div className={styles.experienceCard}>
                                 <div className={styles.cardTop}>
-                                    <div>
+                                    <div className={styles.sectionTop}>
                                         <h3 className={styles.position}>{exp.position}</h3>
 
                                         <p className={styles.company}>{exp.company}</p>
@@ -143,24 +143,24 @@ export function Experience() {
 
                                 <div className={styles.metaRow}>
                                     <div className={styles.metaItem}>
-                                        <Calendar size={16} />
-                                        <span>{exp.period}</span>
+                                        <Calendar size={26} />
+                                        <span style={{fontSize: 16}}>{exp.period}</span>
                                     </div>
 
                                     <div className={styles.metaItem}>
-                                        <MapPin size={16} />
-                                        <span>{exp.location}</span>
+                                        <MapPin size={26} />
+                                        <span >{exp.location}</span>
                                     </div>
                                 </div>
 
                                 <div className={styles.achievementSection}>
                                     <h4 className={styles.achievementTitle}>
-                                        <Briefcase size={18} className={styles.BriefcaseIcon} />
+                                        <Briefcase size={28} className={styles.BriefcaseIcon} />
                                         Key Achievements
                                     </h4>
 
                                     <ul className={styles.achievementList}>
-                                        {exp.achievements.map((award, index)=>(
+                                        {exp.achievements.map((award, index) => (
                                             <li key={index}>
                                                 <span className={styles.achievementDot}></span>
                                                 <span>{award}</span>
@@ -175,7 +175,7 @@ export function Experience() {
                                     </h4>
 
                                     <div className={styles.techTags}>
-                                        {exp.technologies.map((tech, index)=>(
+                                        {exp.technologies.map((tech, index) => (
                                             <span key={index} className={styles.techTag}>
                                                 {tech}
                                             </span>
