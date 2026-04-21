@@ -1,5 +1,32 @@
-.example{
-    color: aqua;
-    padding: 20px;
-    background-color: blue;
+.experiencePage{
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    min-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.header{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.gradient{
+    background: linear-gradient(to right, #45858C, #D94E4E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle{
+    font-size: 1.1rem;
+    color:#6b7280;
+    max-width: 42rem;
+    margin: 0 auto;
 }

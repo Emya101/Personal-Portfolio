@@ -80,18 +80,89 @@ export function Experience() {
 
     const itemAnimSettings = ({ x = -24, y = 0, duration = 0.55, delay = 0 } = {}) =>
     ({
-        hidden: {opacity:0, x, y},
+        hidden: { opacity: 0, x, y },
         visible: {
-            opacity:1,
-            x:0,
-            y:0,
-            transition: {duration, delay}
+            opacity: 1,
+            x: 0,
+            y: 0,
+            transition: { duration, delay }
         }
     });
 
     return (
-        <>
+        <div className={styles.experiencePage}>
+            <motion.div
+                className={styles.header}
+                initial={{ opacity: 0, y: -24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+            >
+                <h1 classname={styles.title}>
+                    Work <span className={styles.gradient}>
+                        Experience
+                    </span>
+                </h1>
 
-        </>
+                <p className={styles.subtitle}>
+                    A detailed overview of my professional journey and achievements
+                </p>
+
+            </motion.div>
+
+            <motion.div
+                className={styles.timelineSection}
+                variants={containerAnimSettings(0.12)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+            >
+                <div className={styles.verticalLine}></div>
+
+                <div className={styles.timelineList}>
+                    {experience.map((exp, index) => (
+                        <motion.div
+                            key={index}
+                            variants={itemAnimSettings({ x: -26, duration: 0.55 })}
+                            whileHover={{ scale: 1.01, y: -4 }}
+                            className={styles.timelineItem}
+                        >
+                            <div className={styles.timelineDot}></div>
+
+                            <div className={styles.experienceCard}>
+                                <div className={styles.cardTop}>
+                                    <div>
+                                        <h3 className={styles.position}>{exp.position}</h3>
+
+                                        <p className={styles.company}>{exp.company}</p>
+                                    </div>
+
+                                    <span className={styles.typeBadge}>
+                                        {exp.type}
+                                    </span>
+                                </div>
+
+                                <div className={styles.metaRow}>
+                                    <div className={styles.metaItem}>
+                                        <Calendar size={16}/>
+                                        <span>{exp.period}</span>
+                                    </div>
+
+                                    <div className={styles.metaItem}>
+                                        <MapPin size={16}/>
+                                        <span>{exp.location}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </motion.div>
+                    ))}
+                </div>
+
+
+
+
+            </motion.div>
+
+        </div>
     );
 }
