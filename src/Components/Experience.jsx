@@ -22,11 +22,11 @@ export function Experience() {
             technologies: ["JavaScript", "React", "Node.js", "Python", "SQL", "MongoDB", "Git"]
         },
         {
-            company: "Freelance",
+            company: "Freelance / Self-Employed",
             position: "Full Stack Developer",
             period: "July 2021 - Present",
             location: "Remote",
-            type: "Freelance / Self-Employed",
+            type: "Freelance",
             achievements: [
                 "Developed backend services integrating 4+ external APIs and relational databases, supporting production web applications used by 1,000+ users.",
                 "Designed 5+ relational database schemas, improving query performance and enabling reliable data storage and retrieval.",
@@ -97,7 +97,7 @@ export function Experience() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
             >
-                <h1 classname={styles.title}>
+                <h1 className={styles.title}>
                     Work <span className={styles.gradient}>
                         Experience
                     </span>

@@ -88,7 +88,7 @@ export function Footer() {
                         <p className={styles.madeNotice}>
                             Made With
                             <Heart className={styles.heart}/>
-                            Using React and Tailwind CSS
+                            Using React
                         </p>
                     </div>
                 </div>
