@@ -143,13 +143,43 @@ export function Experience() {
 
                                 <div className={styles.metaRow}>
                                     <div className={styles.metaItem}>
-                                        <Calendar size={16}/>
+                                        <Calendar size={16} />
                                         <span>{exp.period}</span>
                                     </div>
 
                                     <div className={styles.metaItem}>
-                                        <MapPin size={16}/>
+                                        <MapPin size={16} />
                                         <span>{exp.location}</span>
+                                    </div>
+                                </div>
+
+                                <div className={styles.achievementSection}>
+                                    <h4 className={styles.achievementTitle}>
+                                        <Briefcase size={18} className={styles.BriefcaseIcon} />
+                                        Key Achievements
+                                    </h4>
+
+                                    <ul className={styles.achievementList}>
+                                        {exp.achievements.map((award, index)=>(
+                                            <li key={index}>
+                                                <span className={styles.achievementDot}></span>
+                                                <span>{award}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <div className={styles.techSection}>
+                                    <h4 className={styles.techHeading}>
+                                        Technologies Used
+                                    </h4>
+
+                                    <div className={styles.techTags}>
+                                        {exp.technologies.map((tech, index)=>(
+                                            <span key={index} className={styles.techTag}>
+                                                {tech}
+                                            </span>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
