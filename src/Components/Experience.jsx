@@ -89,6 +89,17 @@ export function Experience() {
         }
     });
 
+    const dotVariants = {
+        initial: {
+            scale: 1,
+            boxShadow: "0 0 0 rgba(0,0,0,0)"
+        },
+        hover: {
+            scale: 1.15,
+            boxShadow: "0 0 12px rgba(217,78,78,0.35)"
+        }
+    };
+
     return (
         <div className={styles.experiencePage}>
             <motion.div
@@ -116,19 +127,20 @@ export function Experience() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.15 }}
             >
-                <div className={styles.verticalLine}></div>
 
                 <div className={styles.timelineList}>
                     {experience.map((exp, index) => (
                         <motion.div
                             key={index}
                             variants={itemAnimSettings({ x: -26, duration: 0.55 })}
-                            whileHover={{ scale: 1.01, y: -4 }}
                             className={styles.timelineItem}
                         >
-                            <div className={styles.timelineDot}></div>
 
-                            <div className={styles.experienceCard}>
+                            <motion.div
+                                className={styles.experienceCard}
+                                whileHover={{ scale: 1.01, y: -4 }}
+                                transition={{ duration: 0.1 }}
+                            >
                                 <div className={styles.cardTop}>
                                     <div className={styles.sectionTop}>
                                         <h3 className={styles.position}>{exp.position}</h3>
@@ -182,7 +194,7 @@ export function Experience() {
                                         ))}
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
 
                         </motion.div>
                     ))}
@@ -211,7 +223,7 @@ export function Experience() {
                             className={styles.awardCard}
                         >
                             <div className={styles.awardIconWrap}>
-                                <achievement.icon size={30}/>
+                                <achievement.icon size={30} />
                             </div>
 
                             <h3 className={styles.awardName}>{achievement.title}</h3>

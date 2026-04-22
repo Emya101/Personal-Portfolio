@@ -190,7 +190,7 @@
     color:#D94E4E;
 }
 
-@media (min-width: 768px){
+@media (min-width: 1024px){
     .navInner {
         height: 5rem;
     }
