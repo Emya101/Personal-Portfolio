@@ -2,13 +2,14 @@ import styles from "./Navigation.module.css";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import resumePdf from "../assets/Supreme's Portfolio Resume.pdf"
 
 export function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
+    const navRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,6 +19,21 @@ export function Navigation() {
         window.addEventListener("scroll", handleScroll); //causes the function to check everytime user scrolls
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);//effect should only run once
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (navRef.current && !navRef.current.contains(e.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     const navLinks = [
         { path: "/", label: "Home" },
         { path: "/about", label: "About" },
@@ -28,6 +44,7 @@ export function Navigation() {
 
     return (
         <motion.nav
+            ref={navRef}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 1 }}
@@ -94,16 +111,19 @@ export function Navigation() {
                                 <Link
                                     key={link.path}
                                     to={link.path}
-                                    className={`${styles.mobileLink} ${location.pathname === link.path ? styles.mobileActiveLink : styles.mobileInactiveLink}`}>
+                                    onClick={() => setIsOpen(false)}
+                                    className={`${styles.mobileLink} ${location.pathname === link.path ? styles.mobileActiveLink : styles.mobileInactiveLink}`}
+                                >
                                     {link.label}
                                 </Link>
                             ))}
 
                             <a href={resumePdf}
                                 download
+                                onClick={() => setIsOpen(false)}
                                 className={styles.mobileCvButton}
                             >
-                                <FileText className={styles.cvIcon}/>
+                                <FileText className={styles.cvIcon} />
                                 Download CV
                             </a>
                         </div>

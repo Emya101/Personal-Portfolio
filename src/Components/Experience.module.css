@@ -288,7 +288,7 @@
 
     .timelineItem {
         position: relative;
-        padding-left: 4rem;
+        padding-left: 2rem;
     }
 
     .timelineItem::before {
@@ -337,7 +337,7 @@
     }
 
     .experienceCard {
-        margin-left: 4rem;
+        margin-left: 1rem;
     }
 
     .awardsGrid {
