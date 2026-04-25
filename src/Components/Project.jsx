@@ -207,10 +207,82 @@ export function Project() {
             <motion.section
                 className={styles.allProjectsSection}
                 variants={containerAnimSettings(0.1)}
-                
-                >
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+            >
+                <motion.h2
+                    className={styles.allProjectsTitle}
+                    variants={itemAnimSettings()}>
+                    All Projects
+                </motion.h2>
 
-                </motion.section>
+                <div className={styles.projectsGrid}>
+                    {projects.map((project, index) => (
+                        <motion.div
+                            key={index}
+                            variants={itemAnimSettings({ y: 24 })}
+                            whileHover={{ scale: 1.04, y: -4 }}
+                            className={styles.projectCard}
+                        >
+                            <div className={styles.smallImageBox}>
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className={styles.projectImage}
+                                />
+
+                                {project.featured && (
+                                    <div className={styles.featuredIconWrap}>
+                                        <Star className={styles.smallStarIcon} />
+                                    </div>
+                                )}
+
+                                <div className={styles.smallStatusWrap}>
+                                    <span
+                                        className={`${styles.smallStatusBadge} ${project.status === "Completed" ? styles.completed : styles.inProgress}`}>
+                                        <Clock size={12} />
+                                        {project.status}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div className={styles.smallCardContent}>
+                                <h3 className={styles.smallProjectTitle}>{project.title}</h3>
+                                <p className={styles.smallDescription}>{project.description}</p>
+
+                                <div className={styles.smallTechList}>
+                                    {project.technologies.slice(0, 3).map((tech, idx) => (
+                                        <span key={idx} className={styles.smallTechList}>
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <div className={styles.smallButtonRow}>
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.smallOutlineButton}>
+                                        <Github size={16} />
+                                        Code
+                                    </a>
+
+                                    <a href={project.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.smallPrimaryButton}
+                                        >
+                                            <ExternalLink size={16}/>
+                                            Demo
+                                        </a>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </motion.section>
         </div>
     );
 }
