@@ -38,7 +38,7 @@ export function Navigation() {
         { path: "/", label: "Home" },
         { path: "/about", label: "About" },
         { path: "/experience", label: "Experience" },
-        { path: "/projects", label: "Projects" },
+        { path: "/project", label: "Projects" },
         { path: "/contact", label: "Contact" },
     ];
 

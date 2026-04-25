@@ -5,6 +5,7 @@ import { Home } from './Components/Home';
 import { About } from './Components/About';
 import { Footer } from './Components/Footer';
 import { Experience } from './Components/Experience'
+import {Project} from './Components/Project'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route index element={<Home/>}/>
         <Route path="about" element={<About/>}/>
         <Route path="experience" element={<Experience/>}/>
+        <Route path="project" element={<Project/>}/>
       </Route>
     </Routes>
   )

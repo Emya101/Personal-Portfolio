@@ -10,7 +10,7 @@ export const router = createBrowserRouter([
             { index: true, Component: Home },
             { path: "about", Component: About },
             { path: "experience", Component: Experience },
-            // { path: "projects", Component: Projects },
+            { path: "project", Component: Project },
             // { path: "contact", Component: Contact },
         ]
     }
