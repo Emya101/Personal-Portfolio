@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import styles from "./Project.module.css";
 import { ExternalLink, Github, Star, Clock } from "lucide-react";
-import emoticonImage from "../assets/Emoticon.jpg";
-import ConcertImage from "../assets/Concert.jpg";
-import WeatherImage from "../assets/WeatherApp.jpg";
-import TaskManagerImage from "../assets/TaskManager.jpg";
-import MyPortfolioImage from "../assets/MyPortfolio.jpg";
-import TechStoreImage from "../assets/TechStores.jpg";
+import emoticonImage from "../assets/Emoticon.webp";
+import ConcertImage from "../assets/Concert.webp";
+import WeatherImage from "../assets/WeatherApp.webp";
+import TaskManagerImage from "../assets/TaskManager.webp";
+import MyPortfolioImage from "../assets/MyPortfolio.webp";
+import TechStoreImage from "../assets/TechStores.webp";
 
 export function Project() {
     const projects = [
@@ -76,7 +76,7 @@ export function Project() {
             technologies: ["React", "JavaScript", "CSS Modules"],
             featured: true,
             github: "https://github.com/Emya101/TechStore",
-            demo: "TBA",
+            demo: "https://emya101.github.io/TechStore/",
             status: "Completed",
         },
     ];

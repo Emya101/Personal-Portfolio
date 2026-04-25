@@ -1,0 +1,195 @@
+.projectsPage {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    min-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.gradient {
+    background: linear-gradient(to right, #45858C, #D94E4E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: #6b7280;
+    max-width: 42rem;
+    margin: 0 auto;
+    line-height: 1.65;
+}
+
+.featuredSection {
+    margin-bottom: 5rem;
+}
+
+.sectionTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1f2937;
+}
+
+.starIcon {
+    color: #6AA6A6;
+    fill: #D94E4E;
+}
+
+.featuredGrid {
+    display: grid;
+    gap: 2rem;
+}
+
+.featuredCard {
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba (69, 133, 140, 0.12);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.featuredCard:hover {
+    box-shadow: 0 20px 34px rgba(0, 0, 0, 0.12);
+}
+
+.featuredImageBox {
+    width: 100%;
+    height: 560px;
+    position: relative;
+    overflow: hidden;
+}
+
+.projectImage {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.featuredCard:hover .projectImage {
+    transform: scale(1.08);
+}
+
+.statusWrap {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.statusBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+}
+
+.statusBadge {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.95rem;
+}
+
+.completed {
+    background: #45858C;
+}
+
+.inProgress {
+    background: #D94E4E;
+}
+
+.cardContent {
+    padding: 1.5rem;
+}
+
+.projectTitle {
+    font-size: 1.55rem;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+
+.projectDescription {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.techList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.techList {
+    margin-bottom: 1.5rem;
+}
+
+.techTag {
+    padding: 0.42rem 0.8rem;
+    background: linear-gradient(to right, rgba(106, 166, 166, 0.18), rgba(217, 123, 115, 0.18));
+    color: #45858C;
+    border: 1px solid rgba(69, 133, 140, 0.12);
+    border-radius: 0.65rem;
+    font-size: 0.85rem;
+    font-weight:600;
+}
+
+.buttonRow{
+    display: flex;
+    gap:0.85rem;
+}
+
+.outlineButton,
+.primaryButton{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.outlineButton,
+.primaryButton{
+    padding:0.7rem 1rem;
+}
+
+.outlineButton{
+    border: 1.5px solid #d1d5db;
+    color: #374151;
+}
+
+.outlineButton:hover{
+    border-color: #D97B73;
+    color: #D97B73;
+}
+
+.primaryButton{
+    background: linear-gradient(to right, #45858C, #D94E4E);
+    color:white;
+}
+
+.primaryButton:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
