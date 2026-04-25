@@ -203,6 +203,14 @@ export function Project() {
                     ))}
                 </div>
             </motion.section>
+
+            <motion.section
+                className={styles.allProjectsSection}
+                variants={containerAnimSettings(0.1)}
+                
+                >
+
+                </motion.section>
         </div>
     );
 }

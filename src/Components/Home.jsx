@@ -117,7 +117,7 @@ export function Home() {
 
                             {/* Buttons */}
                             <motion.div variants={itemAnimSettings({ y: 30, delay: 1.2 })} className={styles.buttonGroup}>
-                                <Link to="/projects" className={styles.primaryButton}>
+                                <Link to="/project" className={styles.primaryButton}>
                                     View my work
                                     <ArrowRight className={styles.rightArrow} />
                                 </Link>
