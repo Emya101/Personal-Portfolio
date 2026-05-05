@@ -1,16 +1,18 @@
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Navigation } from "./Navigation";
-import {Footer} from "./Footer";
+import { Footer } from "./Footer";
+import { ScrollToTop } from "./ScrollToTop";
 import styles from "./Layout.module.css";
 
-export function Layout(){
+export function Layout() {
     return (
         <div className={styles.layout}>
-            <Navigation/>
+            <ScrollToTop />
+            <Navigation />
             <main className={styles.main}>
-                <Outlet/>
+                <Outlet />
             </main>
-            <Footer/>
+            <Footer />
         </div>
     )
 }
