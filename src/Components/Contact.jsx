@@ -168,7 +168,7 @@ export function Contact() {
                             {socialLinks.map((social, index) => (
                                 <motion.a
                                     key={index}
-                                    whileHover={{ scale: 1.1, rotate: 5 }}
+                                    whileHover={{ scale: 1.1, rotate: 10 }}
                                     whileTap={{ scale: 0.95 }}
                                     href={social.href}
                                     target="_blank"
