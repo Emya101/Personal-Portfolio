@@ -95,15 +95,108 @@ export function Contact() {
     });
 
     const itemAnimSettings = ({ y = 24, duration = 0.5, delay = 0 } = {}) => ({
-        hidden:{opacity:0,y},
-        visible:{
-            opacity:1,
-            y:0,
-            transition:{duration, delay},
+        hidden: { opacity: 0, y },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration, delay },
         },
     });
 
     return (
-        <div> Welcome to my contact page </div>
+        <div className={styles.contactPage}>
+            <motion.div
+                className={styles.header}
+                initial={{ opacity: 0, y: -24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+            >
+                <h1 className={styles.title}>
+                    Get In <span className={styles.gradient}>Touch</span>
+                </h1>
+
+                <p className={styles.subtitle}>
+                    Have a project in mind, opportunity, or just want to connect? I'd love to hear from you.
+                </p>
+            </motion.div>
+
+            <div className={styles.contactGrid}>
+                <motion.div
+                    className={styles.contactInfoSide}
+                    variants={containerAnimSettings(0.14)}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.15 }}
+                >
+                    <motion.div variants={itemAnimSettings()}>
+                        <h2 className={styles.sectionHeading}>Let's Connect</h2>
+                        <p className={styles.sectionText}>
+                            Whether you have a question, an idea you want to come alive, or a role opportunity,
+                            feel free to reach out. I'm open to discussing development work, collaboration, and new opportunities.
+                        </p>
+                    </motion.div>
+
+                    <div className={styles.infoCards}>
+                        {contactInfo.map((info, index) => (
+                            <motion.a
+                                key={index}
+                                variants={itemAnimSettings({ y: 24 })}
+                                whileHover={{ scale: 1.02, x: 5 }}
+                                href={info.href}
+                                className={styles.infoCard}
+                            >
+                                <div className={styles.infoIconBox}>
+                                    <info.icon size={24} />
+                                </div>
+
+                                <div>
+                                    <p className={styles.infoLabel}>{info.label}</p>
+                                    <p className={styles.infoValue}>{info.value}</p>
+                                </div>
+                            </motion.a>
+                        )
+                        )}
+                    </div>
+
+
+                    <motion.div variants={itemAnimSettings()}>
+                        <h3 className={styles.followTitle}>
+                            Follow Me
+                        </h3>
+
+                        <div className={styles.socials}>
+                            {socialLinks.map((social, index) => (
+                                <motion.a
+                                    key={index}
+                                    whileHover={{ scale: 1.1, rotate: 5 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${styles.socialIcon} ${social.className}`}
+                                    aria-label={social.label}
+                                >
+                                    <social.icon size={24} />
+                                </motion.a>
+                            ))}
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        variants={itemAnimSettings()}
+                        className={styles.availabilityBox}
+                    >
+                        <div className={styles.availabilityTop}>
+                            <span className={styles.pulseDot}></span>
+                            <p>Available for Work</p>
+                        </div>
+
+                        <p className={styles.availabilityText}>
+                            Currently open to new roles, freelance projects, and collaboration opportunities.
+                        </p>
+                    </motion.div>
+                </motion.div>
+            </div>
+        </div >
     );
 }
