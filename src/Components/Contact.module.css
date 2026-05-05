@@ -169,7 +169,7 @@
     height:0.75rem;
     border-radius: 50%;
     background: #22c55e;
-    animation:pulse 1.4s infinite;
+    animation:pulse 3.4s infinite;
 }
 
 .availabilityText{
@@ -178,3 +178,19 @@
     line-height: 1.55;
 }
 
+@keyframes pulse{
+    0%{
+        transform: scale(0.5);
+        opacity:0.4;
+    }
+
+    70%{
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100%{
+        transform: scale(0.5);
+        opacity:0.4;
+    }
+}
