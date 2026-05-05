@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Github, LinkedIn, Instagram, Store, SendHorizontal } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Instagram, Store, SendHorizontal } from "lucide-react";
 import styles from "./Contact.module.css";
 
 export function Contact() {
