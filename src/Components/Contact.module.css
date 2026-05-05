@@ -1,0 +1,180 @@
+.contactPage {
+    background: linear-gradient(to bottom right, #d9d4a0, #f5f5f1, #d9d4a0);
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    min-height: 100vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.gradient {
+    background: linear-gradient(to right, #45858C, #D94E4E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: #6b7280;
+    max-width: 42rem;
+    margin: 0 auto;
+    line-height: 1.65;
+}
+
+.contactGrid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+}
+
+.contactInfoSide {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sectionHeading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.sectionText {
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+.infoCards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.infoCard {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(69, 133, 140, 0.12);
+    border-radius: 1rem;
+    padding: 1rem;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+    box-shadow: 0 20px 34px rgba(0, 0, 0, 0.12);
+}
+
+.infoIconBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 0.85rem;
+    background: linear-gradient(to bottom right, #45858C, #D94E4E);
+    color: white;
+    flex-shrink: 0;
+}
+
+.infoLabel {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+}
+
+.infoValue {
+    color: #1f2937;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.followTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.socialIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.4rem;
+    height: 3.4rem;
+    background: #45858C;
+    border-radius: 0.85rem;
+    color: white;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.github:hover {
+    background: #333;
+    color: white;
+}
+
+.linkedin:hover {
+    background: #0A66C2;
+    color: white;
+}
+
+.Instagram:hover {
+    background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+    color: white;
+}
+
+.Store:hover {
+    color: white;
+    background: #1DBF73;
+}
+
+.availabilityBox {
+    background: #3cec805b;
+    border: 1px solid rgba(69, 133, 140, 0.16);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.availabilityTop{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+    font-weight: 700;  
+}
+
+.pulseDot{
+    width:0.75rem;
+    height:0.75rem;
+    border-radius: 50%;
+    background: #22c55e;
+    animation:pulse 1.4s infinite;
+}
+
+.availabilityText{
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
