@@ -8,12 +8,12 @@ import { useState } from "react";
 export function About() {
     const skills = [
         { category: "Programming Languages", icon: Terminal, items: ["Java", "JavaScript", "TypeScript", "Python", "SQL", "PHP"], color: "#3b82f6" },
-        { category: "Frontend", icon: Code2, items: ["React", "HTML5", "CSS", "TailWind CSS", "jQuery", "Bootstrap"], color: "#a855f7" },
+        { category: "Frontend", icon: Code2, items: ["React", "HTML5", "CSS", "TailWind CSS", "jQuery", "Bootstrap","Framer Motion"], color: "#a855f7" },
         { category: "Backend", icon: Database, items: ["Node.js", "Express", "MongoDB", "PostgreSQL", "MySQL", "REST APIs", "WebSockets"], color: "#f97316" },
         { category: "Design", icon: Palette, items: ["Figma", "UI/UX", "Prototyping", "Blender"], color: "#22c55e" },
         { category: "Mobile", icon: Smartphone, items: ["React Native", "IOS", "Android"], color: "#16e6f9" },
         { category: "DevOps", icon: Cloud, items: ["AWS", "Docker"], color: "#6366f1" },
-        { category: "Tools", icon: Wrench, items: ["Git", "Github", "Postman", "Clerk", "Stripe", "VS Code"], color: "#eab308" },
+        { category: "Tools", icon: Wrench, items: ["Git", "Github", "Postman", "Clerk", "Stripe", "VS Code","Yup"], color: "#eab308" },
     ];
 
     const containerAnimSettings = (stagger = 0.12) => ({
