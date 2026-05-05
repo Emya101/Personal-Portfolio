@@ -11,7 +11,7 @@ export function Footer() {
             { label: "Home", path: "/" },
             { label: "About", path: "/about" },
             { label: "Experience", path: "/experience" },
-            { label: "Projects", path: "/projects" },
+            { label: "Projects", path: "/project" },
             { label: "Contact", path: "/contact" },
         ],
 
