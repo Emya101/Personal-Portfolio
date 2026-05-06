@@ -196,6 +196,116 @@ export function Contact() {
                         </p>
                     </motion.div>
                 </motion.div>
+
+                <motion.div
+                    className={styles.formSide}
+                    variants={containerAnimSettings(0.12)}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.15 }}
+                >
+                    <motion.div
+                        variants={itemAnimSettings({ y: 28 })}
+                        className={styles.formCard}
+                    >
+                        <h2 className={styles.formTitle}>Send a Message</h2>
+                        <form onSubmit={handleSubmit} className={styles.form}>
+                            <div className={styles.formGrid}>
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="name">Your Name *</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                        placeholder="Supreme Emhenya"
+                                    />
+                                </div>
+
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="email">Your Email *</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                        placeholder="you@example.com"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label htmlFor="subject">
+                                    Subject *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Project Inquiry"
+                                />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label htmlFor="message">Message </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                    rows={6}
+                                    placeholder="Tell me about your project or opportunity..."
+                                />
+                            </div>
+
+                            <motion.button
+                                type="submit"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                disabled={status === "sending"}
+                                className={`${styles.submitButton}${status === "sent" ? styles.sentButton : ""}`}
+                            >
+                                {status === "idle" && (
+                                    <>
+                                        <SendHorizontal size={20} />
+                                        Send Message
+                                    </>
+                                )}
+
+                                {status === "sending" && (
+                                    <>
+                                        <motion.div
+                                            animate={{ rotate: 360 }}
+                                            transition={{
+                                                duration: 1,
+                                                repeat: Infinity,
+                                                ease: "linear",
+                                            }}
+                                        >
+                                            <SendHorizontal size={20} />
+                                        </motion.div>
+                                        Sending...
+                                    </>
+                                )}
+
+                                {status === "sent" &&
+                                    <>
+                                        Message Sent
+                                    </>
+                                }
+                            </motion.button>
+                        </form>
+                    </motion.div>
+                </motion.div>
             </div>
         </div >
     );
