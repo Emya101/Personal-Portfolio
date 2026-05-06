@@ -241,6 +241,14 @@
     box-shadow: 0 0 0 4px rgba(69, 133, 140, 0.12);
 }
 
+.buttonContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    width: 100%;
+}
+
 .submitButton {
     width: 100%;
     border: none;
@@ -258,18 +266,71 @@
     transition: all 0.3s ease;
 }
 
+.submitButton {
+    position: relative;
+    overflow: visible;
+    min-height: 3.5rem;
+}
+
+.buttonContent,
+.sendingContent {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.buttonContent {
+    gap: 0.35rem;
+}
+
+.sendingContent {
+    min-height: unset;
+}
+
+.sendingText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+}
+
+.launchTrack {
+    position: absolute;
+    width: 150px;
+    height: 18px;
+    transform: skewX(-35deg);
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.launchIcon {
+    position: absolute;
+    left: calc(50% - 4.8rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
 .submitButton:hover {
     background: #D97B73;
 }
 
-.submitButton:disabled{
+.submitButton:disabled {
     opacity: 0.65;
     cursor: not-allowed;
 }
 
-.sentButton{
+.sentButton,
+.sentButton:hover {
     background: #22c55e;
 }
+
 
 @keyframes pulse {
     0% {
@@ -288,18 +349,18 @@
     }
 }
 
-@media (min-width:768px){
-    .contactPage{
+@media (min-width:768px) {
+    .contactPage {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
 
-    .title{
+    .title {
         font-size: 3.6rem;
     }
 
-    .formGrid{
-        grid-template-columns:repeat(2,1fr) ;
+    .formGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .formCard {
@@ -307,8 +368,8 @@
     }
 }
 
-@media (min-width:1024px){
-    .contactGrid{
+@media (min-width:1024px) {
+    .contactGrid {
         grid-template-columns: 1fr 2fr;
     }
 }
