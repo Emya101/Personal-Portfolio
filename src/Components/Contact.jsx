@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Github, Linkedin, Instagram, Store, SendHorizontal, CircleCheckBig } from "lucide-react";
 import styles from "./Contact.module.css";
+import { contactSchema } from "../validation/contactSchema";
 
 export function Contact() {
     const [formData, setFormData] = useState({
@@ -12,19 +13,34 @@ export function Contact() {
     });
 
     const [status, setStatus] = useState("idle");
+    const [errors, setErrors] = useState({});
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setStatus("sending");
 
-        setTimeout(() => {
-            setStatus("sent");
-            setFormData({ name: "", email: "", subject: "", message: "" });
+        try {
+            await contactSchema.validate(formData, { abortEarly: false });
+            setErrors({});
+            setStatus("sending");
 
             setTimeout(() => {
-                setStatus("idle");
-            }, 1800)
-        }, 1300);
+                setStatus("sent");
+                setFormData({ name: "", email: "", subject: "", message: "" });
+
+                setTimeout(() => {
+                    setStatus("idle");
+                }, 1800)
+            }, 1300);
+        }
+        catch (validationError) {
+            const newErrors = {};
+
+            validationError.inner.forEach((err) => {
+                newErrors[err.path] = err.message;
+            });
+
+            setErrors(newErrors);
+        }
     };
 
     const handleChange = (e) => {
@@ -221,6 +237,7 @@ export function Contact() {
                                         onChange={handleChange}
                                         placeholder="Supreme Emhenya"
                                     />
+                                    {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
                                 </div>
 
                                 <div className={styles.formGroup}>
@@ -234,6 +251,7 @@ export function Contact() {
 
                                         placeholder="you@example.com"
                                     />
+                                    {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
                                 </div>
                             </div>
 
@@ -251,6 +269,7 @@ export function Contact() {
 
                                     placeholder="Project Inquiry"
                                 />
+                                {errors.subject && <p className={styles.errorMessage}>{errors.subject}</p>}
                             </div>
 
                             <div className={styles.formGroup}>
@@ -264,6 +283,7 @@ export function Contact() {
                                     rows={6}
                                     placeholder="Tell me about your project or opportunity..."
                                 />
+                                {errors.message && <p className={styles.errorMessage}>{errors.message}</p>}
                             </div>
 
                             <motion.button
