@@ -24,7 +24,7 @@ export function Contact() {
             setTimeout(() => {
                 setStatus("idle");
             }, 1800)
-        }, 1500);
+        }, 1300);
     };
 
     const handleChange = (e) => {
