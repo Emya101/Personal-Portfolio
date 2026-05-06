@@ -15,6 +15,8 @@ export function Contact() {
     const [status, setStatus] = useState("idle");
     const [errors, setErrors] = useState({});
 
+    const MESSAGE_LIMIT = 1000;
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -273,17 +275,23 @@ export function Contact() {
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="message">Message </label>
+                                <label htmlFor="message">Message *</label>
                                 <textarea
                                     id="message"
                                     name="message"
                                     value={formData.message}
                                     onChange={handleChange}
-
+                                    maxLength={MESSAGE_LIMIT}
                                     rows={6}
                                     placeholder="Tell me about your project or opportunity..."
                                 />
-                                {errors.message && <p className={styles.errorMessage}>{errors.message}</p>}
+                                <div className={styles.textareaMeta}>
+                                    {errors.message && <p className={styles.errorMessage}>{errors.message}</p>}
+
+                                    <span className={styles.charCount}>
+                                        {formData.message.length}/{MESSAGE_LIMIT} characters
+                                    </span>
+                                </div>
                             </div>
 
                             <motion.button
