@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Github, Linkedin, Instagram, Store, SendHorizontal, CircleCheckBig } from "lucide-react";
 import styles from "./Contact.module.css";
@@ -23,7 +23,7 @@ export function Contact() {
 
             setTimeout(() => {
                 setStatus("idle");
-            }, 3000)
+            }, 1800)
         }, 1500);
     };
 
@@ -219,7 +219,6 @@ export function Contact() {
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        required
                                         placeholder="Supreme Emhenya"
                                     />
                                 </div>
@@ -232,7 +231,7 @@ export function Contact() {
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        required
+
                                         placeholder="you@example.com"
                                     />
                                 </div>
@@ -249,7 +248,7 @@ export function Contact() {
                                     name="subject"
                                     value={formData.subject}
                                     onChange={handleChange}
-                                    required
+
                                     placeholder="Project Inquiry"
                                 />
                             </div>
@@ -261,7 +260,7 @@ export function Contact() {
                                     name="message"
                                     value={formData.message}
                                     onChange={handleChange}
-                                    required
+
                                     rows={6}
                                     placeholder="Tell me about your project or opportunity..."
                                 />
@@ -272,36 +271,101 @@ export function Contact() {
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 disabled={status === "sending"}
-                                className={`${styles.submitButton}${status === "sent" ? styles.sentButton : ""}`}
+                                className={`${styles.submitButton} ${status === "sent" ? styles.sentButton : ""}`}
                             >
-                                {status === "idle" && (
-                                    <>
-                                        <SendHorizontal size={20} />
-                                        Send Message
-                                    </>
-                                )}
-
-                                {status === "sending" && (
-                                    <>
-                                        <motion.div
-                                            animate={{ rotate: 360 }}
+                                <AnimatePresence mode="sync" initial={false}>
+                                    {/* sync allows animation feel continuous and not pause in between */}
+                                    {status === "idle" && (
+                                        <motion.span
+                                            key="idle"
+                                            className={styles.buttonContent}
+                                            initial={{ opacity: 0, scale: 0.92 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.96 }}
                                             transition={{
-                                                duration: 1,
-                                                repeat: Infinity,
-                                                ease: "linear",
+                                                type: "spring",
+                                                stiffness: 360,
+                                                damping: 22,
                                             }}
                                         >
                                             <SendHorizontal size={20} />
-                                        </motion.div>
-                                        Sending...
-                                    </>
-                                )}
+                                            <span>Send Message</span>
+                                        </motion.span>
+                                    )}
 
-                                {status === "sent" &&
-                                    <>
-                                        Message Sent
-                                    </>
-                                }
+                                    {status === "sending" && (
+                                        <motion.span
+                                            key="sending"
+                                            className={styles.sendingContent}
+                                            initial={{ opacity: 1 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                        >
+                                            <motion.span
+                                                className={styles.sendingText}
+                                                initial={{ opacity: 1, y: 0 }}
+                                                animate={{ opacity: 0, y: -24 }}
+                                                transition={{ duration: 0.4 }}
+                                            >
+                                                <SendHorizontal size={20} />
+                                                <span>Send Message</span>
+                                            </motion.span>
+
+                                            <motion.span
+                                                className={styles.launchTrack}
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ delay: 0.2, duration: 0.15 }}
+                                            />
+
+                                            <motion.span
+                                                className={styles.launchIcon}
+                                                initial={{ x: 0, scale: 1, opacity: 1 }}
+                                                animate={{
+                                                    x: [0, 500],
+                                                    scale: [1, 1.25, 1.6, 0.6],
+                                                    opacity: [1, 1, 0, 0],
+                                                }}
+                                                transition={{
+                                                    duration: 1.2,
+                                                    delay: 0.1,
+                                                    ease: "easeInOut",
+                                                }}>
+
+                                                <SendHorizontal size={22} />
+                                            </motion.span>
+                                        </motion.span>
+                                    )}
+
+                                    {status === "sent" &&
+                                        <motion.span
+                                            key="sent"
+                                            className={styles.buttonContent}
+                                            initial={{ opacity: 0, scale: 0.55 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.88 }}
+                                            transition={{
+                                                type: "spring",
+                                                stiffness: 420,
+                                                damping: 18,
+                                            }}
+                                        >
+                                            <motion.span
+                                                initial={{ scale: 0, rotate: -90 }}
+                                                animate={{ scale: 1, rotate: 0 }}
+                                                transition={{
+                                                    type: "spring",
+                                                    stiffness: 500,
+                                                    damping: 14,
+                                                    delay: 0.05,
+                                                }}
+                                            >
+                                                <CircleCheckBig size={22} />
+                                            </motion.span>
+                                            <span>Message Sent</span>
+                                        </motion.span>
+                                    }
+                                </AnimatePresence>
                             </motion.button>
                         </form>
                     </motion.div>
