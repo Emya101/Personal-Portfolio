@@ -331,6 +331,13 @@
     background: #22c55e;
 }
 
+.errorMessage{
+    margin-top: 0.4rem;
+    color:#D97B73;
+    font-size:0.85rem;
+    font-weight: 600;
+}
+
 
 @keyframes pulse {
     0% {
