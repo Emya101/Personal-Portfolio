@@ -338,6 +338,20 @@
     font-weight: 600;
 }
 
+.textareaMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.4rem;
+}
+
+.charCount {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
 
 @keyframes pulse {
     0% {
