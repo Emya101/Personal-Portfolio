@@ -16,32 +16,74 @@ export function Contact() {
     const [errors, setErrors] = useState({});
 
     const MESSAGE_LIMIT = 1000;
+    const COOLDOWN_TIME = 30000;
+    const [lastSubmitTime, setLastSubmitTime] = useState(0);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const now = Date.now();
+        if (now - lastSubmitTime < COOLDOWN_TIME) {
+            setErrors({
+                form: "Please wait a bit before sending another message."
+            });
+            return;
+        }
 
         try {
             await contactSchema.validate(formData, { abortEarly: false });
             setErrors({});
             setStatus("sending");
+            setLastSubmitTime(now);
 
-            setTimeout(() => {
-                setStatus("sent");
-                setFormData({ name: "", email: "", subject: "", message: "" });
-
-                setTimeout(() => {
-                    setStatus("idle");
-                }, 1800)
-            }, 1300);
-        }
-        catch (validationError) {
-            const newErrors = {};
-
-            validationError.inner.forEach((err) => {
-                newErrors[err.path] = err.message;
+            const response = await fetch(import.meta.env.VITE_FORMSPREE_ENDPOINT, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    _gotcha: e.target._gotcha.value,
+                }),
             });
 
-            setErrors(newErrors);
+            if (!response.ok) {
+                throw new Error("Message failed to send");
+            }
+
+            setStatus("sent");
+            setFormData({ name: "", email: "", subject: "", message: "" });
+            setTimeout(() => {
+                setStatus("idle");
+            }, 1800);
+
+            // setTimeout(() => {
+            //     setStatus("sent");
+            //     setFormData({ name: "", email: "", subject: "", message: "" });
+
+            //     setTimeout(() => {
+            //         setStatus("idle");
+            //     }, 1800)
+            // }, 1300);
+        }
+        catch (error) {
+            if (error.inner) {
+                const newErrors = {};
+
+                error.inner.forEach((err) => {
+                    newErrors[err.path] = err.message;
+                });
+
+                setErrors(newErrors);
+            }
+            else {
+                setErrors({
+                    form: "Message failed to send. Please try again.",
+                });
+                setStatus("idle");
+            }
         }
     };
 
@@ -228,6 +270,13 @@ export function Contact() {
                     >
                         <h2 className={styles.formTitle}>Send a Message</h2>
                         <form onSubmit={handleSubmit} className={styles.form}>
+                            <input
+                                type="text"
+                                name="_gotcha"
+                                className={styles.honeypot}
+                                tabIndex="-1"
+                                autoComplete="off"
+                            />
                             <div className={styles.formGrid}>
                                 <div className={styles.formGroup}>
                                     <label htmlFor="name">Your Name *</label>
@@ -293,6 +342,10 @@ export function Contact() {
                                     </span>
                                 </div>
                             </div>
+
+                            {errors.form && (
+                                <p className={styles.errorMessage}>{errors.form}</p>
+                            )}
 
                             <motion.button
                                 type="submit"
