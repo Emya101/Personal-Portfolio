@@ -331,10 +331,10 @@
     background: #22c55e;
 }
 
-.errorMessage{
+.errorMessage {
     margin-top: 0.4rem;
-    color:#D97B73;
-    font-size:0.85rem;
+    color: #D97B73;
+    font-size: 0.85rem;
     font-weight: 600;
 }
 
@@ -350,6 +350,13 @@
     margin-left: auto;
     font-size: 0.85rem;
     color: #6b7280;
+}
+
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 
