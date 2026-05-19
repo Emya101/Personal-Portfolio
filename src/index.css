@@ -30,6 +30,7 @@
   --accent: #d97b73;
   --accent-soft: #d9a296;
   --brand-gradient-soft: linear-gradient(to right, #45858C, #D97B73);
+  --brand-gradient-btm-right: linear-gradient(to bottom right, #45858C, #D97B73);
 
   --tag-bg: #e8f3f3;
   --tag-text: #45858c;
@@ -67,6 +68,7 @@
   --accent: #d9a296;
   --accent-soft: #f0b8ad;
   --brand-gradient-soft: linear-gradient(to right, #6AA6A6, #D9A296);
+  --brand-gradient-btm-right: linear-gradient(to bottom right, #6AA6A6, #D97B73);
 
   --tag-bg: rgba(106, 166, 166, 0.18);
   --tag-text: #8bcaca;

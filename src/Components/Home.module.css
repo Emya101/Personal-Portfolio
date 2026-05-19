@@ -43,7 +43,7 @@
 .imageGlow {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, #D9A296, #D97B73);
+    background: var(--brand-gradient-soft);
     border-radius: 50%;
     filter: blur(50px);
     opacity: 0.35;
@@ -57,7 +57,7 @@
     height: 110vh;
     border-radius: 1rem;
     object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px var(--shadow-lg);
 }
 
 .imageGlow {
@@ -72,8 +72,8 @@
 .badge {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background: #f39696;
-    color: #45858C;
+    background: var(--accent-soft);
+    color: var(--primary);
     border-radius: 20px;
     margin-bottom: 0.1rem;
 }
@@ -81,24 +81,24 @@
 .title {
     font-size: 4rem;
     margin-bottom: 1.5rem;
-    color: black;
+    color: var(--text-main)
 }
 
 .nameColor {
-    background: linear-gradient(to right, #45858C, #D94E4E);
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
     font-size: 1.5rem;
-    color: #4b5563;
+    color: var(--text-soft);
     margin-bottom: 2rem;
 }
 
 .description {
     font-size: 1.125rem;
-    color: #6b7280;
+    color: var(--text-muted);
     margin-bottom: 2rem;
     max-width: 36rem;
 }
@@ -116,7 +116,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(to right, #45858C, #D94E4E);
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     color: white;
     border-radius: 0.5rem;
     text-decoration: none;
@@ -124,7 +124,7 @@
 }
 
 .primaryButton:hover {
-    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 25px var(--shadow-lg);
     color: white;
 }
 
@@ -141,16 +141,16 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    border: 2px solid #c9cfd8;
-    color: #374151;
+    border: 2px solid var(--card-border);
+    color: var(--text-secondary);
     border-radius: 10px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .secondaryButton:hover {
-    border-color: #D97B73;
-    color: #D97B73;
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
 .secondaryButton:hover .messageCircle {
@@ -169,16 +169,16 @@
 
 .socialIcon {
     padding: 0.75em;
-    background: #45858C;
+    background: var(--primary);
     color: white;
     border-radius: 0.5rem;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px 0px var(--shadow-md);
     transition: all 0.3s ease-in-out;
 }
 
 .socialIcon:hover {
     transform: scale(1.1);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 10px 20px var(--shadow-lg);
 }
 
 .github:hover {
@@ -192,7 +192,7 @@
 }
 
 .email:hover {
-    background: #D94E4E;
+    background: var(--secondary);
     color: white;
 }
 
@@ -209,11 +209,12 @@
     align-items: center;
     gap: 1rem;
 
-    background: #6AA6A6;
+
     backdrop-filter: blur(10px);
     border-radius: 1rem;
     padding: 1.25rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: var(--primary-soft);
+    box-shadow: 0 10px 20px var(--shadow-md);
 }
 
 .statIconBox {
@@ -222,7 +223,7 @@
     justify-content: center;
     padding: 0.75rem;
     color: white;
-    background: linear-gradient(to bottom right, #6AA6A6, #D97B73);
+    background: var(--brand-gradient-btm-right);
     border-radius: 0.75rem;
 }
 
@@ -239,7 +240,7 @@
 
 .statLabel {
     font-size: 0.9rem;
-    color: #374151;
+    color: var(--text-secondary);
 }
 
 .scrollIndicator {
@@ -249,7 +250,7 @@
 
     width: 30px;
     height: 40px;
-    border: 2px solid #45858C;
+    border: 2px solid var(--primary);
     border-radius: 20px;
 
     display: flex;
@@ -262,7 +263,7 @@
 .scrollDot {
     width: 4px;
     height: 8px;
-    background: #D9A296;
+    background: var(--accent-soft);
     border-radius: 2px;
 }
 
@@ -270,7 +271,7 @@
     position: absolute;
     width: 100%;
     inset: 0;
-    background: linear-gradient(to bottom right, #d9d4a0, #f5f5f1, #d9d4a0);
+    background: var(--page-gradient);
     opacity: 0.85;
     z-index: 0;
 }
@@ -284,7 +285,7 @@
     border-radius: 50%;
     filter: blur(50px);
     opacity: 0.35;
-    background: #45858C;
+    background: var(--primary);
 }
 
 .secondCircle {
@@ -296,7 +297,7 @@
     border-radius: 50%;
     filter: blur(50px);
     opacity: 0.35;
-    background: #D97B73;
+    background: var(--accent);
 }
 
 @media (max-width:1024px) {
