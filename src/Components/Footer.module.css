@@ -1,7 +1,7 @@
 .footer {
-    background: #c7dfdf;
-    border-top: 1px solid #a8a9aa;
-    margin-top: 3rem;
+    background: var(--footer-bg);
+    border-top: 1px solid var(--card-border);
+    margin-top: 0.5rem;
 }
 
 .container {
@@ -25,7 +25,7 @@
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    background: linear-gradient(to right, #45858C, #D94E4E);
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     color: transparent;
     text-decoration: none;
@@ -34,7 +34,7 @@
 }
 
 .description {
-    color: rgb(78, 16, 16);
+    color: var(--text-soft);
     margin-bottom: 2rem;
 }
 
@@ -45,7 +45,7 @@
 
 .socialBtn {
     padding: 0.5rem;
-    background: #D97B73;
+    background: var(--accent);
     color: black;
     border-radius: 0.5rem;
     transition: all 0.1s ease-in-out;
@@ -73,7 +73,7 @@
 
 .socialBtn:nth-child(5):hover {
     color: white;
-    background: #D94E4E;
+    background: var(--secondary);
 }
 
 .icon {
@@ -84,7 +84,7 @@
 .heading {
     font-size: 1.125rem;
     margin-bottom: 1rem;
-    color: black;
+    color: var(--text-main);
 }
 
 .list {
@@ -97,22 +97,22 @@
 }
 
 .Nav {
-    color: #374151;
+    color: var(--text-secondary);
 }
 
 .Nav:hover {
-    color: #D94E4E;
+    color: var(--secondary);
 }
 
 .contactList {
     list-style: none;
     padding: 0;
-    color: #4b5563;
+    color: var(--text-soft);
 }
 
 .bottomBar {
     padding-top: 2rem;
-    border-top: 1px solid #45858C;
+    border-top: 1px solid var(--primary);
 }
 
 .bottomContent {
@@ -120,26 +120,26 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
-    color: #4b5563;
+    color: var(--text-soft);
 }
 
 .copy {
     font-size: 0.875rem;
 }
 
-.madeNotice{
+.madeNotice {
     display: flex;
     align-items: center;
-    gap:0.25rem;
+    gap: 0.25rem;
     font-size: 0.875rem;
-    color: #4b5563;
+    color: var(--text-soft);
 }
 
-.heart{
-    width:16px;
-    height:16px;
-    color:red;
-    fill:red;
+.heart {
+    width: 16px;
+    height: 16px;
+    color: red;
+    fill: red;
 }
 
 @media (max-width: 768px) {
