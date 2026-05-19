@@ -3,11 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+import { useTheme } from "../context/ThemeContext";
 import resumePdf from "../assets/Supreme's Portfolio Resume.pdf"
 
 export function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const { theme, toggleTheme } = useTheme();
     const location = useLocation();
     const navRef = useRef(null);
 
@@ -56,9 +58,16 @@ export function Navigation() {
                         Portfolio
                     </Link>
 
-                    <div className={styles.mode}>
-                        <Sun className={styles.modeSymbol} />
-                    </div>
+                    <button className={styles.mode}
+                        onClick={toggleTheme}
+                        aria-label="Toggle theme"
+                    >
+                        {theme === "dark" ? (
+                            <Moon className={styles.modeSymbol} />
+                        ) : (
+                            <Sun className={styles.modeSymbol} />
+                        )}
+                    </button>
 
                     <div className={styles.desktopNav}>
                         {navLinks.map((link) => (
