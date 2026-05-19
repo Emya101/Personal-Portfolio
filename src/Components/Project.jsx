@@ -253,7 +253,7 @@ export function Project() {
 
                                 <div className={styles.smallTechList}>
                                     {project.technologies.slice(0, 3).map((tech, idx) => (
-                                        <span key={idx} className={styles.smallTechList}>
+                                        <span key={idx} className={styles.smallTechTag}>
                                             {tech}
                                         </span>
                                     ))}
