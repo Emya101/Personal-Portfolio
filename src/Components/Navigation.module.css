@@ -8,14 +8,14 @@
 }
 
 .transparent {
-    background: rgba(182, 240, 136, 0.08);
+    background: var(--nav-transparent);
     backdrop-filter: blur(8px);
 }
 
 .scrolled {
-    background: rgba(145, 226, 226, 0.445);
+    background: var(--nav-bg);
     backdrop-filter: blur(7px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.082);
+    box-shadow: 0 8px 20px var(--shadow-sm);
 }
 
 .container {
@@ -34,7 +34,7 @@
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(to right, #45858C, #D94E4E);
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
@@ -43,36 +43,45 @@
 .mode {
     width: 50px;
     height: 50px;
-    border: 1.5px solid rgba(69, 133, 140, 0.28);
-    background: rgba(250, 248, 246, 0.9);
+    border: 1.5px solid var(--card-border);
+    background: var(--card-bg);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px var(--shadow-sm);
+    padding: 0;
+    outline: none;
+    font: inherit;
+    transition: all 0.25s ease;
 }
 
 .mode:hover {
     transform: translateY(-2px);
-    border-color: #D97B73;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    border-color: var(--secondary);
+    box-shadow: 0 8px 18px var(--shadow-md);
 }
 
 .mode:active {
     transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 10px var(--shadow-sm);
 }
 
 .mode:hover .modeSymbol {
-    background: linear-gradient(to right, #45858C, #D97B73);
+    background: var(--brand-gradient-soft);
+}
+
+.mode:focus-visible {
+    outline: 3px solid rgba(217, 123, 115, 0.35);
+    outline-offset: 4px;
 }
 
 .modeSymbol {
     color: white;
     padding: 10px;
-    background: linear-gradient(to right, #45858C, #6AA6A6);
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: linear-gradient(to right, var(--primary), var(--primary-soft));
+    border: 1px solid var(--card-border);
     border-radius: 50%;
     transition: all 0.25s ease;
 }
@@ -88,15 +97,15 @@
 }
 
 .activeLink {
-    color: #D94E4E;
+    color: var(--secondary);
 }
 
 .inactiveLink {
-    color: #374151;
+    color: var(--text-secondary);
 }
 
 .inactiveLink:hover {
-    color: #D97B73;
+    color: var(--accent);
 }
 
 .activeUnderline {
@@ -105,7 +114,7 @@
     right: 0;
     bottom: -0.25rem;
     height: 2px;
-    background: #45858C;
+    background: var(--primary);
 }
 
 .cvButton {
@@ -113,7 +122,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
-    background: linear-gradient(to right, #45858C, #D97B73);
+    background: var(--brand-gradient-soft);
     color: white;
     border-radius: 0.5rem;
     text-decoration: none;
@@ -121,7 +130,7 @@
 }
 
 .cvButton:hover {
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 10px 20px var(--shadow-md);
 }
 
 .cvIcon {
@@ -130,20 +139,20 @@
 }
 
 .mobileNav {
-    background: rgba(145, 226, 226, 0.445);
+    background: var(--nav-bg);
     backdrop-filter: blur(12px);
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--card-border);
     overflow: hidden;
 }
 
-.mobileNavInner{
-    display:flex;
+.mobileNavInner {
+    display: flex;
     flex-direction: column;
-    gap:0.75rem;
-    padding:1rem;
+    gap: 0.75rem;
+    padding: 1rem;
 }
 
-.mobileLink{
+.mobileLink {
     display: block;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
@@ -151,46 +160,49 @@
     transition: all 0.3s ease;
 }
 
-.mobileInactiveLink{
-    color: #374151;
+.mobileInactiveLink {
+    color: var(--text-secondary);
 }
 
 .mobileInactiveLink:hover {
-    background: rgba(145, 226, 226, 0.445);
-    color:#D9A296;
+    background: var(--nav-bg);
+    color: var(--accent-soft);
 }
 
-.mobileActiveLink{
-    background:#45858C;
-    color: #D97B73;
+.mobileActiveLink {
+    background: var(--primary);
+    color: white;
 }
 
-.mobileCvButton{
+.mobileCvButton {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
-    background: linear-gradient(to right, #45858C, #D97B73);
+    background: var(--brand-gradient-soft);
     color: white;
     border-radius: 0.5rem;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
-.menuIcon{
+.mobileMenuButton{
+    background: var(--card-bg);
+}
+.menuIcon {
     border-radius: 15px;
-    padding:5px;
-    color:#45858C;
+    padding: 5px;
+    color: var(--primary);
 }
 
-.menuX{
+.menuX {
     border-radius: 15px;
-    padding:5px;
-    color:#D94E4E;
+    padding: 5px;
+    color: var(--secondary);
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
     .navInner {
         height: 5rem;
     }
