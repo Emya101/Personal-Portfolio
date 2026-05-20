@@ -86,6 +86,13 @@
     transition: all 0.25s ease;
 }
 
+.themeIconWrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 500px;
+}
+
 .desktopNav {
     display: none;
 }
