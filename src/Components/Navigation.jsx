@@ -58,16 +58,27 @@ export function Navigation() {
                         Portfolio
                     </Link>
 
-                    <button className={styles.mode}
+                    <motion.button
+                        className={styles.mode}
                         onClick={toggleTheme}
                         aria-label="Toggle theme"
                     >
-                        {theme === "dark" ? (
-                            <Moon className={styles.modeSymbol} />
-                        ) : (
-                            <Sun className={styles.modeSymbol} />
-                        )}
-                    </button>
+                        <motion.span
+                            key={theme}
+                            className={styles.themeIconWrap}
+                            initial={{ rotateY: 180, opacity: 0, scale: 0.6 }}
+                            animate={{ rotateY: 0, opacity: 1, scale: 1 }}
+                            exit={{ rotateY: -180, opacity: 0, scale: 0.6 }}
+                            transition={{ duration: 0.35, ease: "easeInOut" }}
+                        >
+                            {theme === "dark" ? (
+                                <Moon className={styles.modeSymbol} />
+                            ) : (
+                                <Sun className={styles.modeSymbol} />
+                            )}
+                        </motion.span>
+
+                    </motion.button>
 
                     <div className={styles.desktopNav}>
                         {navLinks.map((link) => (
