@@ -2,18 +2,16 @@ h3 {
     color: white;
 }
 
-
-
 .aboutPage h2 {
     font-size: 2rem;
-    color: #42858C;
+    color: var(--primary);
 }
 
 .aboutPage {
     padding-top: 6rem;
     margin: auto;
     padding: 2rem 1rem;
-    background: linear-gradient(to bottom right, #d9d4a0, #f5f5f1, #d9d4a0);
+    background: var(--page-gradient);
 }
 
 .header {
@@ -24,7 +22,7 @@ h3 {
 .title {
     padding-top: 20px;
     font-size: 3rem;
-    color: black;
+    color: var(--text-main);
 }
 
 .skillTitle {
@@ -33,13 +31,13 @@ h3 {
 }
 
 .gradient {
-    background: linear-gradient(to right, #45858C, #D94E4E);
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-    color: #6b7280;
+    color: var(--text-muted);
 }
 
 .introSection {
@@ -66,7 +64,7 @@ h3 {
     display: flex;
     align-self: left;
     flex-direction: column;
-    color: #6b7280;
+    color: var(--text-muted);
     gap: 1rem;
     padding: 20px;
 }
@@ -78,7 +76,7 @@ h3 {
 }
 
 .tags span {
-    background: linear-gradient(to right, #6AA6A6, #D9A296);
+    background: var(--brand-gradient-soft);
     ;
     padding: 0.4rem 0.8rem;
     border-radius: 30px;
@@ -95,11 +93,11 @@ h3 {
 }
 
 .skillCard {
-    background: #75b9b9;
+    background: var(--card-bg-strong);
     padding: 1.5rem;
     border-radius: 1rem;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(66, 133, 140, 0.12);
+    border: 1px solid var(--card-border);
+    box-shadow: 0px 5px 15px var(--shadow-sm);
 }
 
 .iconBox {
@@ -111,8 +109,8 @@ h3 {
     justify-content: center;
     color: white;
     flex-shrink: 0;
-    background: linear-gradient(to right, #42858C, #D97B73);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    background: var(--brand-gradient-soft);
+    box-shadow: 0 8px 20px var(--shadow-md);
 }
 
 .skillHeader {
@@ -123,7 +121,6 @@ h3 {
 }
 
 
-
 .skillItems {
     display: flex;
     flex-wrap: wrap;
@@ -131,8 +128,8 @@ h3 {
 }
 
 .skillItems span {
-    background: #e8f3f3;
-    color: #42858C;
+    background: var(--tag-bg);
+    color: var(--tag-text);
     padding: 0.35rem 0.7rem;
     border-radius: 0.5rem;
     font-weight: 500;
@@ -144,10 +141,10 @@ h3 {
 }
 
 .card {
-    background: #75b9b9;
+    background: var(--card-bg-strong);
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 15px var(--shadow-sm);
 }
 
 .Heading {
@@ -174,7 +171,7 @@ h3 {
 .card li {
     position: relative;
     padding-left: 1.25rem;
-    color: #4b5563;
+    color: var(--text-soft);
     line-height: 1.5;
 }
 
@@ -186,7 +183,7 @@ h3 {
     width: 0.45rem;
     height: 0.45rem;
     border-radius: 10%;
-    background: linear-gradient(to right, #45858C, #D97B73);
+    background: var(--brand-gradient-soft);
 }
 
 .timeline {
@@ -196,7 +193,7 @@ h3 {
 }
 
 .timeline>div {
-    border-left: 4px solid #45858C;
+    border-left: 4px solid var(--primary);
     padding-left: 1rem;
     position: relative;
 }
@@ -208,15 +205,15 @@ h3 {
     top: 0.15rem;
     width: 0.9rem;
     height: 0.9rem;
-    background: #D94E4E;
+    background: var(--secondary);
     border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 0 2px #45858C;
+    border: 3px solid var(--page-bg);
+    box-shadow: 0 0 0 2px var(--primary);
 }
 
 .timeline p {
     font-size: 0.9rem;
-    color: #6b7280;
+    color: var(--text-muted);
     margin-bottom: 0.35rem;
 }
 
@@ -230,16 +227,17 @@ h3 {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding:.35rem 0.8rem;
+    padding: .35rem 0.8rem;
     border-radius: 20px;
-    background: #e8f3f3;
-    min-width:80px;
+    background: var(--tag-bg);
+    min-width: 80px;
+    color: var(--tag-text);
     height: auto;
 }
 
-.cover p{
+.cover p {
     font-size: medium;
-    color: #45858C;
+    color: var(--primary);
     margin: 0;
 }
 
@@ -248,10 +246,10 @@ h3 {
     font-size: 0.95rem;
 }
 
-.modalOverlay{
+.modalOverlay {
     position: fixed;
-    inset:0;
-    background: rgba(0,0,0,0.65);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -259,47 +257,47 @@ h3 {
     z-index: 1000;
 }
 
-.modalContent{
+.modalContent {
     position: relative;
-    background: #6AA6A6;
+    background: var(--primary-soft);
     border-radius: 1rem;
     padding: 1rem;
     max-width: 900px;
-    width:100%;
+    width: 100%;
     max-height: 90vh;
-    overflow:auto;
+    overflow: auto;
 }
 
-.degreePreview{
-    width:100%;
-    height:auto;
-    display:block;
+.degreePreview {
+    width: 100%;
+    height: auto;
+    display: block;
     border-radius: 0.75rem;
 }
 
-.degreeButton{
-    background: #D9A296;
+.degreeButton {
+    background: var(--accent-soft);
     border: none;
-    color:#4c9da6;
+    color: var(--primary);
     cursor: pointer;
     font-weight: 600;
     padding: 5px;
     border-radius: 20px;
 }
 
-.degreeButton:hover{
+.degreeButton:hover {
     transform: scale(1.05);
     transition: ease-in-out;
 }
 
-.closeButton{
+.closeButton {
     position: absolute;
     top: 0.75rem;
-    right:0.75rem;
+    right: 0.75rem;
     border: none;
-    background: #45858C;
-    width:36px;
-    height:36px;
+    background: var(--primary);
+    width: 36px;
+    height: 36px;
     border-radius: 10%;
     cursor: pointer;
     font-size: 1.2rem;
