@@ -131,7 +131,7 @@ export function Project() {
                     variants={itemAnimSettings()}
                 >
                     <Star className={styles.starIcon} />
-                    Featured Projects
+                    <span className={styles.featuredTitle}>Featured Projects</span>
                 </motion.h2>
 
                 <div className={styles.featuredGrid}>
