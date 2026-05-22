@@ -1,5 +1,5 @@
 .contactPage {
-    background: linear-gradient(to bottom right, #d9d4a0, #f5f5f1, #d9d4a0);
+    background: var(--page-gradient);
     padding-top: 6rem;
     padding-bottom: 4rem;
     min-height: 100vh;
@@ -15,18 +15,18 @@
 .title {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #1f2937;
+    color: var(--text-main);
 }
 
 .gradient {
-    background: linear-gradient(to right, #45858C, #D94E4E);
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
     font-size: 1.05rem;
-    color: #6b7280;
+    color: var(--text-muted);
     max-width: 42rem;
     margin: 0 auto;
     line-height: 1.65;
@@ -48,11 +48,11 @@
 .sectionHeading {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #1f2937;
+    color: var(--text-main);
 }
 
 .sectionText {
-    color: #6b7280;
+    color: var(--text-muted);
     line-height: 1.7;
 }
 
@@ -66,18 +66,18 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: #e8f3f3;
+    background: var(--card-bg);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(69, 133, 140, 0.12);
+    border: 1px solid var(--card-border);
     border-radius: 1rem;
     padding: 1rem;
     text-decoration: none;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px var(--shadow-sm);
     transition: all 0.3s ease;
 }
 
 .infoCard:hover {
-    box-shadow: 0 20px 34px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 20px 34px var(--shadow-md);
 }
 
 .infoIconBox {
@@ -87,19 +87,19 @@
     width: 3.25rem;
     height: 3.25rem;
     border-radius: 0.85rem;
-    background: linear-gradient(to bottom right, #45858C, #D94E4E);
+    background: var(--brand-gradient-btm-right);
     color: white;
     flex-shrink: 0;
 }
 
 .infoLabel {
     font-size: 0.85rem;
-    color: #6b7280;
+    color: var(--text-muted);
     margin-bottom: 0.25rem;
 }
 
 .infoValue {
-    color: #1f2937;
+    color: var(--text-main);
     font-size: 1.05rem;
     font-weight: 600;
 }
@@ -107,7 +107,7 @@
 .followTitle {
     font-size: 1.25rem;
     margin-bottom: 1rem;
-    color: #1f2937;
+    color: var(--text-main);
 }
 
 .socials {
@@ -121,10 +121,10 @@
     justify-content: center;
     width: 3.4rem;
     height: 3.4rem;
-    background: #45858C;
+    background: var(--primary);
     border-radius: 0.85rem;
     color: white;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 24px var(--shadow-md);
     transition: all 0.3s ease;
 }
 
@@ -149,8 +149,8 @@
 }
 
 .availabilityBox {
-    background: #3cec805b;
-    border: 1px solid rgba(69, 133, 140, 0.16);
+    background: var(--avail-box);
+    border: 1px solid var(--card-border);
     border-radius: 1rem;
     padding: 1.5rem;
 }
@@ -160,7 +160,7 @@
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 0.5rem;
-    color: #1f2937;
+    color: var(--text-main);
     font-weight: 700;
 }
 
@@ -173,24 +173,24 @@
 }
 
 .availabilityText {
-    color: #6b7280;
+    color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.55;
 }
 
 .formCard {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--card-glass);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(69, 133, 140, 0.12);
+    border: 1px solid var(--card-border);
     border-radius: 1.25rem;
     padding: 1.5rem;
-    box-shadow: 0 20px 34px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 20px 34px var(--shadow-md);
 }
 
 .formTitle {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #1f2937;
+    color: var(--text-main);
 }
 
 .form {
@@ -212,7 +212,7 @@
 .formGroup label {
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
-    color: #374151;
+    color: var(--text-secondary);
     font-weight: 600;
 }
 
@@ -222,12 +222,12 @@
     width: 100%;
     max-width: 100%;
     padding: 0.9rem 1rem;
-    border: 2px solid #e5e7eb;
+    border: 2px solid var(--input-border);
     outline: none;
     font-family: inherit;
     font-size: 1rem;
-    color: #1f2937;
-    background: white;
+    color: var(--text-main);
+    background: var(--input-bg);
     transition: all 0.25s ease;
 }
 
@@ -237,7 +237,7 @@
 
 .formGroup input:focus,
 .formGroup textarea:focus {
-    border-color: #45858C;
+    border-color: var(--primary);
     box-shadow: 0 0 0 4px rgba(69, 133, 140, 0.12);
 }
 
@@ -259,7 +259,7 @@
     gap: 0.55rem;
     padding: 1rem 1.5rem;
     border-radius: 0.75rem;
-    background: linear-gradient(to right, #45858C, #D94E4E);
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     color: white;
     font-weight: 700;
     font-size: 1rem;
@@ -318,7 +318,7 @@
 }
 
 .submitButton:hover {
-    background: #D97B73;
+    background: var(--accent);
 }
 
 .submitButton:disabled {
@@ -333,7 +333,7 @@
 
 .errorMessage {
     margin-top: 0.4rem;
-    color: #D97B73;
+    color: var(--accent);
     font-size: 0.85rem;
     font-weight: 600;
 }
