@@ -43,6 +43,11 @@
   color: var(--text-main);
   background: var(--page-bg);
   --featured-icon-bg: rgba(255, 255, 255, 0.86);
+
+  --input-bg: white;
+  --input-border: #e5e7eb;
+
+  --avail-box: #3cec805b;
 }
 
 :root.dark {
@@ -80,6 +85,11 @@
   --shadow-lg: rgba(0, 0, 0, 0.48);
 
   --featured-icon-bg: rgba(30, 41, 59, 0.86);
+
+  --input-bg: #111827;
+  --input-border: rgba(255, 255, 255, 0.16);
+
+  --avail-box: rgba(34, 197, 94, 0.14);
 }
 
 html,
@@ -88,7 +98,7 @@ body {
   padding: 0;
   background: var(--page-bg);
   color: var(--text-main);
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: 0.3s ease, color 0.3s ease;
 }
 
 a {
