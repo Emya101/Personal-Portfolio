@@ -37,7 +37,7 @@
 
   --shadow-sm: rgba(0, 0, 0, 0.08);
   --shadow-md: rgba(0, 0, 0, 0.12);
-  --shadow-lg: rgba(0, 0, 0, 0.15);
+  --shadow-lg: rgba(46, 46, 46, 0.15);
 
   color: var(--text-main);
   background: var(--page-bg);

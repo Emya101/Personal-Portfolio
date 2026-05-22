@@ -1,9 +1,9 @@
 .experiencePage {
-    background: linear-gradient(to bottom right, #d9d4a0, #f5f5f1, #d9d4a0);
-    border: 1px solid rgba(69, 133, 140, 0.12);
+    background: var(--page-gradient);
+    border: 1px solid var(--card-border);
     border-radius: 1rem;
     padding: 2rem 1.25rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 20px var(--shadow-sm);
     transition: all 0.3s ease;
 }
 
@@ -16,18 +16,18 @@
 .title {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: black;
+    color: var(--text-main);
 }
 
 .gradient {
-    background: linear-gradient(to right, #45858C, #D94E4E);
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
     font-size: 1.1rem;
-    color: #6b7280;
+    color: var(--text-muted);
     max-width: 42rem;
     margin: 0 auto;
 }
@@ -58,16 +58,15 @@
 }
 
 .experienceCard {
-    background: #e8f3f3;
+    background: var(--card-bg);
     border-radius: 1.25rem;
     padding: 1.5rem;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px var(--shadow-sm);
     transition: all 0.3s ease;
 }
 
 .experienceCard:hover {
-    box-shadow: 0 20px 32px rgba(0, 0, 0, 0.12);
-    ;
+    box-shadow: 0 20px 32px var(--shadow-md);
 }
 
 .cardTop {
@@ -85,12 +84,12 @@
     font-size: 1.65rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
-    color: #1f2937;
+    color: var(--text-main);
 }
 
 .company {
     font-size: 1.05rem;
-    color: #45858C;
+    color: var(--primary);
     font-weight: 600;
     margin-bottom: 0;
 }
@@ -99,9 +98,9 @@
     display: inline-block;
     width: fit-content;
     padding: 0.5rem 0.95rem;
-    color: #45858C;
+    color: var(--primary);
     background: linear-gradient(to right, rgba(106, 166, 166, 0.18), rgba(217, 123, 115, 0.18));
-    border: 1px solid rgba(69, 133, 140, 0.15);
+    border: 1px solid var(--card-border);
     border-radius: 999px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -112,7 +111,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1.5rem;
-    color: #6b7280;
+    color: var(--text-muted);
 }
 
 .metaItem {
@@ -132,11 +131,11 @@
     margin-bottom: 1rem;
     font-size: 1.05rem;
     font-weight: 700;
-    color: #1f2937;
+    color: var(--text-main);
 }
 
 .BriefcaseIcon {
-    color: #6AA6A6;
+    color: var(--primary);
 }
 
 .achievementList {
@@ -152,12 +151,12 @@
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
-    color: #4b5563;
+    color: var(--text-soft);
     line-height: 1.55;
 }
 
 .achievementDot {
-    background: #D97B73;
+    background: var(--accent);
     width: 0.42rem;
     height: 0.42rem;
     margin-top: 0.5rem;
@@ -171,7 +170,7 @@
 
 .techHeading {
     font-size: 0.9rem;
-    color: #6b7280;
+    color: var(--text-muted);
     margin-bottom: 0.8rem;
 }
 
@@ -183,9 +182,9 @@
 
 .techTag {
     padding: 0.42rem 0.8rem;
-    background: rgba(69, 133, 140, 0.08);
-    color: #3d5961;
-    border: 1px solid rgba(69, 133, 140, 0.12);
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border: 1px solid var(--card-border);
     border-radius: 999px;
     font-size: 0.84rem;
     font-weight: 500;
@@ -199,7 +198,7 @@
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #1f2937;
+    color: var(--text-main);
 }
 
 .awardsGrid {
@@ -208,20 +207,20 @@
 }
 
 .awardCard {
-    background: #6AA6A6;
+    background: var(--primary-soft);
     border-radius: 1.25rem;
     padding: 1.75rem;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px var(--shadow-sm);
     text-align: center;
     transition: all 0.3s ease;
 }
 
 .awardCard:hover {
-    box-shadow: 0px 20px 32px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 20px 32px var(--shadow-md);
 }
 
 .awardIconWrap {
-    background: linear-gradient(to right, #6AA6A6, #D97B73);
+    background: var(--brand-gradient-soft);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -237,7 +236,7 @@
 }
 
 .awardYear {
-    color: #f7b8aa;
+    color: var(--accent-soft);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
@@ -283,7 +282,7 @@
         top: 0;
         bottom: 0;
         width: 4px;
-        background: linear-gradient(to bottom, #45858C, #D94E4E);
+        background: linear-gradient(to bottom, var(--primary), var(--secondary));
         border-radius: 50px;
     }
 
@@ -299,10 +298,10 @@
         top: 2rem;
         width: 1.2rem;
         height: 1.2rem;
-        background: linear-gradient(to right, #45858C, #D94E4E);
+        background: linear-gradient(to right, var(--primary), var(--secondary));
         border-radius: 50%;
-        border: 4px solid white;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+        border: 4px solid var(--page-bg);
+        box-shadow: 0 6px 14px var(--shadow-md);
         transform: translateX(-50%);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         z-index: 2;
@@ -310,7 +309,7 @@
 
     .timelineItem:hover::before {
         transform: translateX(-50%) scale(1.15);
-        box-shadow: 0 0 12px rgba(217, 78, 78, 0.35);
+        box-shadow: 0 0 12px var(--shadow-md);
     }
 
     .verticalLine {
@@ -320,7 +319,7 @@
         width: 4px;
         top: 0;
         bottom: 0;
-        background: linear-gradient(to bottom, #45858C, #D94E4E);
+        background: linear-gradient(to bottom, var(--primary), var(--secondary));
         border-radius: 50px;
     }
 
@@ -331,10 +330,10 @@
         top: 2rem;
         width: 1.2rem;
         height: 1.2rem;
-        background: linear-gradient(to right, #45858C, #D94E4E);
+        background: linear-gradient(to right, var(--primary), var(--secondary));
         border-radius: 50%;
-        border: 4px solid white;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+        border: 4px solid var(--page-bg);
+        box-shadow: 0 6px 14px var(--shadow-md);
     }
 
     .experienceCard {
