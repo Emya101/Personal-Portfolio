@@ -6,6 +6,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+
   --page-bg: #f5f5f1;
   --page-gradient: linear-gradient(to bottom right, #d9d4a0, #f5f5f1, #d9d4a0);
 
@@ -41,6 +42,7 @@
 
   color: var(--text-main);
   background: var(--page-bg);
+  --featured-icon-bg: rgba(255, 255, 255, 0.86);
 }
 
 :root.dark {
@@ -76,6 +78,8 @@
   --shadow-sm: rgba(0, 0, 0, 0.28);
   --shadow-md: rgba(0, 0, 0, 0.38);
   --shadow-lg: rgba(0, 0, 0, 0.48);
+
+  --featured-icon-bg: rgba(30, 41, 59, 0.86);
 }
 
 html,
