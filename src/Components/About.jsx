@@ -8,12 +8,12 @@ import { useState } from "react";
 export function About() {
     const skills = [
         { category: "Programming Languages", icon: Terminal, items: ["Java", "JavaScript", "TypeScript", "Python", "SQL", "PHP"], color: "#3b82f6" },
-        { category: "Frontend", icon: Code2, items: ["React", "HTML5", "CSS", "TailWind CSS", "jQuery", "Bootstrap","Framer Motion"], color: "#a855f7" },
+        { category: "Frontend", icon: Code2, items: ["React", "HTML5", "CSS", "TailWind CSS", "jQuery", "Bootstrap", "Framer Motion"], color: "#a855f7" },
         { category: "Backend", icon: Database, items: ["Node.js", "Express", "MongoDB", "PostgreSQL", "MySQL", "REST APIs", "WebSockets"], color: "#f97316" },
         { category: "Design", icon: Palette, items: ["Figma", "UI/UX", "Prototyping", "Blender"], color: "#22c55e" },
         { category: "Mobile", icon: Smartphone, items: ["React Native", "IOS", "Android"], color: "#16e6f9" },
         { category: "DevOps", icon: Cloud, items: ["AWS", "Docker"], color: "#6366f1" },
-        { category: "Tools", icon: Wrench, items: ["Git", "Github", "Postman", "Clerk", "Stripe", "VS Code","Yup"], color: "#eab308" },
+        { category: "Tools", icon: Wrench, items: ["Git", "Github", "Postman", "Clerk", "Stripe", "VS Code", "Yup"], color: "#eab308" },
     ];
 
     const containerAnimSettings = (stagger = 0.12) => ({
@@ -77,16 +77,17 @@ export function About() {
 
                     <motion.p
                         variants={itemAnimSettings({ y: 24, delay: 0.05 })}>
-                        I'm a full-stack developer focused on building modern, responsive web applications
-                        that deliver real value. I enjoy solving complex problems and turning ideas into
-                        practical, real-world solutions.
+                        I'm a full-stack developer who enjoys building practical web applications
+                        with clean interfaces and reliable backend systems. I like taking ideas from
+                        concept to implementation and turning them into products people can actually use.
                     </motion.p>
 
                     <motion.p
                         variants={itemAnimSettings({ y: 24, delay: 0.1 })}>
-                        I specialize in React and backend development, including server creation, API
-                        integration, and database management. I'm always learning new technologies to
-                        improve my skills and stay current in a fast-moving industry.
+                        My experience includes frontend development with React, backend APIs with Node.js
+                        and Express, database management, authentication systems, and cloud-focused tooling.
+                        I'm constantly refining my skills through projects, experimentation, and continuous learning.
+
                     </motion.p>
 
                     <motion.div
