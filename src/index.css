@@ -46,6 +46,7 @@
 
   --input-bg: white;
   --input-border: #e5e7eb;
+  --dot-bg: white;
 
   --avail-box: #3cec805b;
 }
@@ -88,6 +89,7 @@
 
   --input-bg: #111827;
   --input-border: rgba(255, 255, 255, 0.16);
+  --dot-bg: rgb(87, 87, 87);
 
   --avail-box: rgba(34, 197, 94, 0.14);
 }
