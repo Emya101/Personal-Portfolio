@@ -59,14 +59,6 @@ export function Contact() {
                 setStatus("idle");
             }, 1800);
 
-            // setTimeout(() => {
-            //     setStatus("sent");
-            //     setFormData({ name: "", email: "", subject: "", message: "" });
-
-            //     setTimeout(() => {
-            //         setStatus("idle");
-            //     }, 1800)
-            // }, 1300);
         }
         catch (error) {
             if (error.inner) {
@@ -191,7 +183,7 @@ export function Contact() {
                     <motion.div variants={itemAnimSettings()}>
                         <h2 className={styles.sectionHeading}>Let's Connect</h2>
                         <p className={styles.sectionText}>
-                            Whether you have a question, an idea you want to come alive, or a role opportunity,
+                            Whether you have a question, an idea you want to come alive, or a role/opportunity,
                             feel free to reach out. I'm open to discussing development work, collaboration, and new opportunities.
                         </p>
                     </motion.div>
