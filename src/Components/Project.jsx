@@ -19,6 +19,7 @@ export function Project() {
             github: "https://github.com/Emya101/emoticonquotes",
             demo: "TBA",
             status: "In Progress",
+            availableDemo: false,
         },
 
         {
@@ -28,8 +29,9 @@ export function Project() {
             technologies: ["React", "Node.js", "Express", "MongoDB", "Ticketmaster API", "Nunjucks"],
             featured: true,
             github: "https://github.com/Emya101/ConcertFinder",
-            demo: "TBA",
             status: "Completed",
+            demo: "TBA",
+            availableDemo: false,
         },
 
         {
@@ -42,6 +44,7 @@ export function Project() {
             github: "https://github.com/Emya101/Weathermass-Weather-Website-Project-1",
             demo: "TBA",
             status: "In Progress",
+            availableDemo: false,
         },
 
         {
@@ -49,11 +52,12 @@ export function Project() {
             description:
                 "A task management application built to practice REST APIs, state management, and full-stack application structure.",
             image: TaskManagerImage,
-            technologies: ["React", "JavaScript", "CSS"],
+            technologies: ["React", "JavaScript", "CSS", "Yup"],
             featured: true,
             github: "https://github.com/Emya101/Task-Manager-App/",
             demo: "https://emya101.github.io/Task-Manager-App/",
             status: "Completed",
+            availableDemo: true,
         },
 
         {
@@ -66,6 +70,7 @@ export function Project() {
             github: "https://github.com/Emya101/Personal-Portfolio",
             demo: "TBA",
             status: "In-Progress",
+            availableDemo: true,
         },
 
         {
@@ -78,6 +83,7 @@ export function Project() {
             github: "https://github.com/Emya101/TechStore",
             demo: "https://emya101.github.io/TechStore/",
             status: "Completed",
+            availableDemo: true,
         },
     ];
 
@@ -187,15 +193,26 @@ export function Project() {
                                         Code
                                     </a>
 
-                                    <a
-                                        href={project.demo}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={styles.primaryButton}
-                                    >
-                                        <ExternalLink size={16}></ExternalLink>
-                                        Live Demo
-                                    </a>
+                                    {project.availableDemo ? (
+                                        <a
+                                            href={project.demo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={styles.primaryButton}
+                                        >
+                                            <ExternalLink size={16}></ExternalLink>
+                                            Live Demo
+                                        </a>
+                                    ) : (
+                                        <button
+                                            type="button"
+                                            className={styles.unavailableAction}
+                                            disabled
+                                        >
+                                            <ExternalLink size={16}></ExternalLink>
+                                            No Demo
+                                        </button>
+                                    )}
                                 </div>
 
                             </div>
@@ -269,14 +286,26 @@ export function Project() {
                                         Code
                                     </a>
 
-                                    <a href={project.demo}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={styles.smallPrimaryButton}
+                                    {project.availableDemo ? (
+                                        <a
+                                            href={project.demo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={styles.smallPrimaryButton}
                                         >
-                                            <ExternalLink size={16}/>
-                                            Demo
+                                            <ExternalLink size={16}></ExternalLink>
+                                            Live Demo
                                         </a>
+                                    ) : (
+                                        <button
+                                            type="button"
+                                            className={styles.smallUnavailableAction}
+                                            disabled
+                                        >
+                                            <ExternalLink size={16}></ExternalLink>
+                                            No Demo
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>
