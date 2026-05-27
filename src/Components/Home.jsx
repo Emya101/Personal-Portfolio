@@ -96,7 +96,7 @@ export function Home() {
                         <div className={styles.textSide}>
                             {/* Title block */}
                             <motion.div variants={itemAnimSettings({ y: 20, delay: 0.2 })} className={styles.badge}>
-                                Available for hire
+                                Open to IT, software, web, and full-stack roles
                             </motion.div>
 
                             <motion.h1 variants={itemAnimSettings({ y: 30, delay: 0.4 })} className={styles.title}>
@@ -110,8 +110,9 @@ export function Home() {
                             {/* Description */}
                             <motion.p variants={itemAnimSettings({ y: 30, delay: 1.0 })} className={styles.description}>
 
-                                I build modern web applications and backend systems using contemporary
-                                technologies, creating scalable and user-focused digital solutions.
+                                I build practical web applications with clean interfaces, reliable backend logic,
+    and features that feel useful beyond a demo. My work combines full-stack development,
+    API integration, responsive design, and product-focused problem solving.
 
                             </motion.p>
 
