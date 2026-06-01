@@ -32,12 +32,13 @@
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(to right, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-decoration: none;
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.logo:hover{
+    transform: scale(1.15);
 }
 
 .mode {
@@ -86,7 +87,7 @@
     transition: all 0.25s ease;
 }
 
-.themeIconWrap{
+.themeIconWrap {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,9 +195,10 @@
     transition: all 0.3s ease-in-out;
 }
 
-.mobileMenuButton{
+.mobileMenuButton {
     background: var(--card-bg);
 }
+
 .menuIcon {
     border-radius: 15px;
     padding: 5px;
