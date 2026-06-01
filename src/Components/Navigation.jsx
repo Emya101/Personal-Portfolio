@@ -4,7 +4,9 @@ import { Menu, X, Sun, Moon, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "../context/ThemeContext";
-import resumePdf from "../assets/Supreme's Portfolio Resume.pdf"
+import resumePdf from "../assets/Supreme's Portfolio Resume.pdf";
+import myLogo from "../assets/logo.png";
+import DarkLogo from "../assets/S3Dark.png";
 
 export function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
@@ -54,8 +56,12 @@ export function Navigation() {
         >
             <div className={styles.container}>
                 <div className={styles.navInner}>
-                    <Link to="/" className={styles.logo}>
-                        Portfolio
+                    <Link to="/" className={styles.logoLink} aria-label="Go to homepage">
+                        {theme === "dark" ? (
+                            <img src={DarkLogo} alt="Portfolio Logo" className={styles.logo} />
+                        ) : (
+                            <img src={myLogo} alt="Portfolio Logo" className={styles.logo} />
+                        )}
                     </Link>
 
                     <motion.button
