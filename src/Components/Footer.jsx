@@ -2,9 +2,14 @@ import { Link } from "react-router-dom"; //Helps to link between pages(web versi
 import { Github, Linkedin, Mail, Heart, Store, Instagram } from "lucide-react"//import icons from lucide react package
 import styles from "./Footer.module.css"
 import { motion } from "framer-motion"
+import { useTheme } from "../context/ThemeContext";
+
+import myLogo from "../assets/logo.png";
+import DarkLogo from "../assets/S3Dark.png";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
+    const { theme } = useTheme();
 
     const footerLinks = {
         Navigation: [
@@ -29,9 +34,11 @@ export function Footer() {
             <div className={styles.container}>
                 <div className={styles.grid}>
                     <div>
-                        <Link to="/" className={styles.logo}>
-                            Portfolio
-                        </Link>
+                        {theme === "dark" ? (
+                            <img src={DarkLogo} alt="Portfolio Logo" className={styles.logo} />
+                        ) : (
+                            <img src={myLogo} alt="Portfolio Logo" className={styles.logo} />
+                        )}
 
                         <p className={styles.description}>
                             Building exceptional digital experiences with modern technologies.
@@ -44,9 +51,9 @@ export function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={styles.socialBtn}
-                                    whileHover={{scale:1.05 , y:-2}}
+                                    whileHover={{ scale: 1.05, y: -2 }}
                                 >
-                                    <social.icon className={styles.icon}/>
+                                    <social.icon className={styles.icon} />
                                 </motion.a>
                             ))}
                         </motion.div>
@@ -55,13 +62,13 @@ export function Footer() {
                     <div>
                         <h3 className={styles.heading}>Quick Links</h3>
                         <ul className={styles.list}>
-                        {footerLinks.Navigation.map((Nav, index)=>(
-                            <li key={index}>
-                                <Link to ={Nav.path} className={styles.Nav}>
-                                    {Nav.label}
-                                </Link>
-                            </li>
-                        ))}
+                            {footerLinks.Navigation.map((Nav, index) => (
+                                <li key={index}>
+                                    <Link to={Nav.path} className={styles.Nav}>
+                                        {Nav.label}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
@@ -69,7 +76,7 @@ export function Footer() {
                         <h3 className={styles.heading}>Get in Touch</h3>
                         <ul className={styles.contactList}>
                             <li>Winnipeg, Manitoba</li>
-                            
+
                             <li>
                                 <a href="mailto:emhenyasupreme@gmail.com" className={styles.Nav}>
                                     emhenyasupreme@gmail.com
@@ -79,7 +86,7 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className ={styles.bottomBar}>
+                <div className={styles.bottomBar}>
                     <div className={styles.bottomContent}>
                         <p className={styles.copy}>
                             © {currentYear} Supreme Emhenya. All rights reserved.
@@ -87,7 +94,7 @@ export function Footer() {
 
                         <p className={styles.madeNotice}>
                             Made With
-                            <Heart className={styles.heart}/>
+                            <Heart className={styles.heart} />
                             Using React
                         </p>
                     </div>
