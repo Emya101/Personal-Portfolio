@@ -1,10 +1,7 @@
 .projectsPage {
     background: var(--page-gradient);
-    padding-bottom: 4rem;
+    padding: 2rem;
     min-height: 100vh;
-
-    margin: 0 auto;
-    margin-top: 5rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
