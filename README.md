@@ -1,18 +1,66 @@
-# React + Vite
+# Supreme Emhenya Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My responsive personal portfolio website built with React and Vite to showcase my software development projects, technical skills, experience, and achievements.
 
-Currently, two official plugins are available:
+## My Portfolio's Live Site
+[View Portfolio](https://personal-portfolio-ncjs.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## My Portfolio's Features
+- Responsive multi-page portfolio
+- Light and dark mode toggle
+- Animated page sections with Framer Motion
+- Project showcase with status badges and demo/code links
+- Contact form with Yup validation
+- Formspree integration for message delivery
+- Honeypot field for basic spam protection
+- Resume download
+- Mobile-friendly navigation
 
-## React Compiler
+## The Portfolio's Tech Stack
+- React
+- Vite
+- JavaScript
+- CSS Modules
+- React Router
+- Framer Motion
+- Lucide React
+- Yup
+- Formspree
+- Vercel
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## The Available Pages
+- Home
+- About
+- Experience
+- Projects
+- Contact
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
+Clone the repository:
+```bash
+git clone https://github.com/Emya101/Personal-Portfolio.git Navigate into the project:
 
-## Expanding the ESLint configuration
+cd Personal-Portfolio
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Install dependencies: npm install
+
+Run the development server: npm run dev
+
+Build for production: npm run build
+
+Environment Variables: Create a .env file in the project root and add:
+
+VITE_FORMSPREE_ENDPOINT=your_formspree_endpoint
+
+Deployment: This project is deployed on Vercel.
+
+For React Router support on direct page refreshes, the project uses vercel.json rewrite rules.
+
+Project Status: Version 1 is deployed. Future improvements may include project filtering, stronger project case studies, improved image optimization, and additional portfolio polish.
+```
+
+Author
+
+Supreme Emhenya
+[Github](https://github.com/Emya101)
+[LinkedIn](linkedin.com/in/supreme-emhenya)
