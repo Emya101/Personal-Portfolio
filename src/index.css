@@ -53,7 +53,7 @@
 }
 
 :root.dark {
-  color-scheme: dark;
+  color-scheme: light;
   --page-bg: #0f172a;
   --page-gradient: linear-gradient(to bottom right, #0f172a, #111827, #1e293b);
 
