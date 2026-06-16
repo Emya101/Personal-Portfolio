@@ -23,5 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-src/assets/
+src/assets/Certificate.png
+src/assets/MainPhoto.jpg
+src/assets/old_resume.pdf
 .env
