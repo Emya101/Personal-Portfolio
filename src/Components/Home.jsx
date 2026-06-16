@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"; //Helps to link between pages(web versi
 import { Github, Linkedin, Mail, Code2, Briefcase, GraduationCap, BadgeCheck, ArrowRight, MessageCircle } from "lucide-react"//import icons from lucide react package
 import styles from "./Home.module.css"
 import { motion } from "framer-motion"
-import myImage from "../assets/MyPicture.jpg"
+import myImage from "../assets/MainPhoto(Uncropped).jpg"
 
 export function Home() {
     const containerAnimSettings = (stagger = 0.2) => ({ //Parent Container Function
@@ -25,8 +25,8 @@ export function Home() {
         },
     });
     const details = [// Stats array, helps to render the stats section
-        { icon: Code2, label: "Projects Built", value: "15+" },
-        { icon: Briefcase, label: "Years of Experience", value: "2+" },
+        { icon: Code2, label: "Projects Built", value: "40+" },
+        { icon: Briefcase, label: "Years of Experience", value: "4+" },
         { icon: GraduationCap, label: "Bsc Applied Computer Science", value: "2025" },
         { icon: BadgeCheck, label: "Certifications", value: "5+" }
     ];
