@@ -4,7 +4,7 @@ import { Menu, X, Sun, Moon, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "../context/ThemeContext";
-import resumePdf from "../assets/Supreme_Emhenya_Portfolio_Resume.pdf";
+import resumePdf from "../assets/Supreme's Portfolio Resume.pdf";
 import myLogo from "../assets/logo.png";
 import DarkLogo from "../assets/S3Dark.png";
 
