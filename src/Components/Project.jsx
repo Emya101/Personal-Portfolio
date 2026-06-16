@@ -66,10 +66,10 @@ export function Project() {
                 "A responsive and animated portfolio website showcasing my projects, experience, and skills. Built with modern React, CSS Modules, and Framer Motion for smooth UI interactions.",
             image: MyPortfolioImage,
             technologies: ["React", "JavaScript", "CSS Modules", "Framer Motion"],
-            featured: false,
+            featured: true,
             github: "https://github.com/Emya101/Personal-Portfolio",
             demo: "TBA",
-            status: "In-Progress",
+            status: "Completed",
             availableDemo: true,
         },
 
