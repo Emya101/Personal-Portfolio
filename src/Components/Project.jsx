@@ -68,7 +68,7 @@ export function Project() {
             technologies: ["React", "JavaScript", "CSS Modules", "Framer Motion"],
             featured: true,
             github: "https://github.com/Emya101/Personal-Portfolio",
-            demo: "TBA",
+            demo: "https://personal-portfolio-ealh.vercel.app",
             status: "Completed",
             availableDemo: true,
         },
