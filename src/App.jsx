@@ -7,19 +7,23 @@ import { Footer } from './Components/Footer';
 import { Experience } from './Components/Experience'
 import {Project} from './Components/Project';
 import {Contact} from './Components/Contact';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout/>}>
-        <Route index element={<Home/>}/>
-        <Route path="about" element={<About/>}/>
-        <Route path="experience" element={<Experience/>}/>
-        <Route path="project" element={<Project/>}/>
-        <Route path="contact" element={<Contact/>}/>
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route index element={<Home/>}/>
+          <Route path="about" element={<About/>}/>
+          <Route path="experience" element={<Experience/>}/>
+          <Route path="project" element={<Project/>}/>
+          <Route path="contact" element={<Contact/>}/>
+        </Route>
+      </Routes>
+      <Analytics />
+    </>
   )
 }
 
